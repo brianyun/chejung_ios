@@ -74,14 +74,14 @@ class DateAndTime: NSObject {
         var weekdayAsChar: String = ""
         
         switch weekDayInt {
-            case 1 : weekdayAsChar = "일"
-            case 2 : weekdayAsChar = "월"
-            case 3 : weekdayAsChar = "화"
-            case 4 : weekdayAsChar = "수"
-            case 5 : weekdayAsChar = "목"
-            case 6 : weekdayAsChar = "금"
-            case 7 :  weekdayAsChar = "토"
-            default : weekdayAsChar = "?"
+            case 1 : weekdayAsChar = "(일)"
+            case 2 : weekdayAsChar = "(월)"
+            case 3 : weekdayAsChar = "(화)"
+            case 4 : weekdayAsChar = "(수)"
+            case 5 : weekdayAsChar = "(목)"
+            case 6 : weekdayAsChar = "(금)"
+            case 7 :  weekdayAsChar = "(토)"
+            default : weekdayAsChar = "(?)"
         }
         
         return weekdayAsChar

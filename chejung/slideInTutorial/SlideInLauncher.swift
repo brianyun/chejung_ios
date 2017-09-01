@@ -37,14 +37,14 @@ class SlideInLauncher: NSObject, UITextFieldDelegate {
             blackView.alpha = 0
             
             
-            let heightLim: CGFloat = 400 //올라오는 slide-in view의 높이를 조정하려면 이 값만 딱 바꾸면 된다.
-            let yTop = window.frame.height - heightLim
-            slideInObj.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: heightLim)
+            //let heightLim: CGFloat = Vy(400) //올라오는 slide-in view의 높이를 조정하려면 이 값만 딱 바꾸면 된다.
+            //let yTop = Vy(267)
+            slideInObj.frame = CGRect(x: 0, y: Vy(667), width: Vx(375), height: Vy(400))
             slideInObj.backgroundColor = self.appDelegate.ub.hexToUIColor("#EEE7D5")
             
             
             activityIndicator.activityIndicatorViewStyle = .gray
-            activityIndicator.frame = CGRect(x: (window.frame.width-50)/2, y: (window.frame.height-50)/2, width: 50, height: 50)
+            activityIndicator.frame = CGRect(x: Vx(325)/2, y: (Vy(667)-Vx(50))/2, width: Vx(50), height: Vx(50))
             activityIndicator.isHidden = true
             window.addSubview(activityIndicator)
             window.bringSubview(toFront: activityIndicator)
@@ -58,7 +58,7 @@ class SlideInLauncher: NSObject, UITextFieldDelegate {
                 
                 self.blackView.alpha = 1
                 
-                self.slideInObj.frame = CGRect(x: 0, y: yTop, width: self.slideInObj.frame.width, height: self.slideInObj.frame.height)
+                self.slideInObj.frame = CGRect(x: 0, y: self.Vy(267), width: self.Vx(375), height: self.Vy(400))
                 
             }, completion: nil)
             
@@ -70,16 +70,10 @@ class SlideInLauncher: NSObject, UITextFieldDelegate {
     
     func handleDismiss() {
         //view를 원래대로 돌리는 함수. blackView는 투명하게, slideInObj는 다시 내려가게.
-        
+
         UIView.animate(withDuration: 0.5, animations: {
             self.blackView.alpha = 0
-            
-            if let window = UIApplication.shared.keyWindow {
-            
-                self.slideInObj.frame = CGRect(x: 0, y: window.frame.height, width: self.slideInObj.frame.width, height: self.slideInObj.frame.height)
-
-            
-            }
+            self.slideInObj.frame = CGRect(x: 0, y: self.Vy(667), width: self.Vx(375), height: self.Vy(400))
         })
     
     }
@@ -105,35 +99,35 @@ class SlideInLauncher: NSObject, UITextFieldDelegate {
     
     func setUI() {
     
-        self.label1 = self.appDelegate.ub.buildLabel(target: self.label1, text: "0 점", color: "000000", textAlignment: .center, x: 0, y: 0, width: self.slideInObj.frame.width, height: 40)
-        self.label1.font = UIFont(name: "NanumBarunpen-Bold", size: 25.0)
+        self.label1 = self.appDelegate.ub.buildLabel(target: self.label1, text: "0 점", color: "000000", textAlignment: .center, x: Vx(0), y: Vy(0), width: Vx(375), height: Vy(40))
+        self.label1.font = UIFont(name: "NanumBarunpen-Bold", size: Vy(25.0))
         self.label1.textColor = self.appDelegate.ub.hexToUIColor("#C0392B")
         //확인하려고 만든 background color. 나중에 다 삭제해야됨.
         //self.label1.backgroundColor = self.appDelegate.ub.hexToUIColor("#F8C6CF")
         
         
         
-        self.label2 = self.appDelegate.ub.buildLabel(target: self.label2, text: "별점을 매겨주세요!", color: "000000", textAlignment: .center, x: 0, y: 40, width: self.slideInObj.frame.width, height: 30)
-        self.label2.font = UIFont(name: "NanumBarunpen", size: 17.0)
+        self.label2 = self.appDelegate.ub.buildLabel(target: self.label2, text: "별점을 매겨주세요!", color: "000000", textAlignment: .center, x: Vx(0), y: Vy(40), width: Vx(375), height: Vy(30))
+        self.label2.font = UIFont(name: "NanumBarunpen", size: Vy(17.0))
         self.label2.textColor = self.appDelegate.ub.hexToUIColor("#C0392B")
         //확인하려고 만든 background color. 나중에 다 삭제해야됨.
         //self.label2.backgroundColor = self.appDelegate.ub.hexToUIColor("#F9BF3B")
         
         
         
-        self.ratingView = self.appDelegate.ub.buildCosmosView(target: self.ratingView, fillMode: 1, starSize: 40.0, filledColor: "#C0392B", emptyColor: "#FFFFFF", filledBorderColor: "#C0392B", emptyBorderColor: "#C0392B")
+        self.ratingView = self.appDelegate.ub.buildCosmosView(target: self.ratingView, fillMode: 1, starSize: Double(Vy(40.0)), filledColor: "#C0392B", emptyColor: "#FFFFFF", filledBorderColor: "#C0392B", emptyBorderColor: "#C0392B")
         let leftMargin = (self.slideInObj.frame.width - self.ratingView.intrinsicContentSize.width)/2
-        self.ratingView.frame = CGRect(x: leftMargin, y: 75, width: self.ratingView.intrinsicContentSize.width, height: self.ratingView.intrinsicContentSize.height)
+        self.ratingView.frame = CGRect(x: leftMargin, y: Vy(75), width: self.ratingView.intrinsicContentSize.width, height: self.ratingView.intrinsicContentSize.height)
         
         
         
         self.lineView.backgroundColor = self.appDelegate.ub.hexToUIColor("ABB7B7")
-        self.lineView.frame = CGRect(x: 10, y: 119, width: self.slideInObj.frame.width - 20, height: 2)
+        self.lineView.frame = CGRect(x: Vx(10), y: Vy(119), width: Vx(355), height: Vy(2))
 
         
         
-        self.label3 = self.appDelegate.ub.buildLabel(target: self.label3, text: "의견을 자유롭게 써주세요!", color: "000000", textAlignment: .center, x: 0, y: 125, width: self.slideInObj.frame.width, height: 40)
-        self.label3.font = UIFont(name: "NanumBarunpen", size: 20.0)
+        self.label3 = self.appDelegate.ub.buildLabel(target: self.label3, text: "의견을 자유롭게 써주세요!", color: "000000", textAlignment: .center, x: Vx(0), y: Vy(125), width: Vx(375), height: Vy(40))
+        self.label3.font = UIFont(name: "NanumBarunpen", size: Vy(20.0))
         self.label3.textColor = self.appDelegate.ub.hexToUIColor("#C0392B")
         //확인하려고 만든 background color. 나중에 다 삭제해야됨.
         //self.label3.backgroundColor = self.appDelegate.ub.hexToUIColor("#F8C6CF")
@@ -142,19 +136,19 @@ class SlideInLauncher: NSObject, UITextFieldDelegate {
         
         //commentView는 진짜 배경으로서의 의미만 있다. 나중에 배경 이미지 넣어야지.
         self.commentView.backgroundColor = UIColor.white
-        self.commentView.frame = CGRect(x: 10, y: 170, width: self.slideInObj.frame.width - 20, height: self.slideInObj.frame.height - 170 - 71 - 10)
+        self.commentView.frame = CGRect(x: Vx(10), y: Vy(170), width: Vx(355), height: Vy(149))
         
         
         
         //자동으로 firstResponder 되는듯.
-        self.commentTextView = self.appDelegate.ub.buildTextField(target: self.commentTextView, placeholder: "의견을 써주세요", keyboardType: .default, returnKeyType: .done, autocorrectionType: .no, autocapitalizationType: .none, secureTextEntry: false, x: 10, y: 170, width: self.slideInObj.frame.width - 20, height: self.slideInObj.frame.height - 170 - 71 - 10, text: "", color: "#000000", tintColor: "#000000", clearButtonMode: .whileEditing)
-        self.commentTextView.font = UIFont(name: "NanumBarunpen", size: 15.0)
+        self.commentTextView = self.appDelegate.ub.buildTextField(target: self.commentTextView, placeholder: "의견을 써주세요", keyboardType: .default, returnKeyType: .done, autocorrectionType: .no, autocapitalizationType: .none, secureTextEntry: false, x: Vx(10), y: Vy(170), width: Vx(355), height: Vy(149), text: "", color: "#000000", tintColor: "#000000", clearButtonMode: .whileEditing)
+        self.commentTextView.font = UIFont(name: "NanumBarunpen", size: Vy(20.0))
         self.commentTextView.contentVerticalAlignment = .top
         
         
         
-        self.returnBtn = self.appDelegate.ub.buildButton(target: self.returnBtn, title: "보내기", titleColor: "#FFFFFF", imageName: "returnBtn_temp", backgroundColor: "", x: 20, y: self.slideInObj.frame.height - 71, width: self.slideInObj.frame.width - 40, height: 60)
-        self.returnBtn.titleLabel?.font = UIFont(name: "NanumBarunpen-Bold", size: 20.0)
+        self.returnBtn = self.appDelegate.ub.buildButton(target: self.returnBtn, title: "보내기", titleColor: "#FFFFFF", imageName: "returnBtn_temp", backgroundColor: "", x: Vx(20), y: Vy(329), width: Vx(335), height: Vy(60))
+        self.returnBtn.titleLabel?.font = UIFont(name: "NanumBarunpen-Bold", size: Vy(20.0))
         self.returnBtn.titleEdgeInsets = UIEdgeInsets(top: 0, left: self.returnBtn.currentImage!.size.width * -1, bottom: 0, right: 0)
     }
     
@@ -204,10 +198,7 @@ class SlideInLauncher: NSObject, UITextFieldDelegate {
         print("DEBUG: func exitEdit")
         //withDuration의 0.2라는 값은 키보드 등장/사라지는 속도. 정확한 값을 몰라서 대충 0.2라고 함. 실험결과 0.2면 사용성 해치지 않음.
         UIView.animate(withDuration: 0.2, animations: {
-            if let window = UIApplication.shared.keyWindow {
-                
-                self.slideInObj.frame = CGRect(x: 0, y: window.frame.height - 400, width: self.slideInObj.frame.width, height: self.slideInObj.frame.height)
-            }
+            self.slideInObj.frame = CGRect(x: self.Vx(0), y: self.Vy(267), width: self.Vx(375), height: self.Vy(400))
         })
         
         if let window = UIApplication.shared.keyWindow {
@@ -319,10 +310,7 @@ class SlideInLauncher: NSObject, UITextFieldDelegate {
     var keyboardHeight = CGFloat() {
         didSet {
             UIView.animate(withDuration: 0.5, animations: {
-                if let window = UIApplication.shared.keyWindow {
-                    
-                    self.slideInObj.frame = CGRect(x: 0, y: window.frame.height - 400 - self.keyboardHeight, width: self.slideInObj.frame.width, height: self.slideInObj.frame.height)
-                }
+                self.slideInObj.frame = CGRect(x: self.Vx(0), y: self.Vy(267) - self.keyboardHeight, width: self.Vx(375), height: self.Vy(400))
             })
             
             if let window = UIApplication.shared.keyWindow {
@@ -374,6 +362,24 @@ class SlideInLauncher: NSObject, UITextFieldDelegate {
         self.label1.text = label1Txt
         self.label2.text = label2Txt
     }
+    
+    
+    
+    
+    
+    func Vx(_ n: CGFloat) -> CGFloat {
+    
+        return n * (UIApplication.shared.keyWindow!.frame.width/375)
+    }
+    
+    
+    func Vy(_ n: CGFloat) -> CGFloat {
+    
+        return n * (UIApplication.shared.keyWindow!.frame.height/667)
+    }
+    
+    
+    
     
     
     
