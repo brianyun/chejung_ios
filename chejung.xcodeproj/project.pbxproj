@@ -1,0 +1,520 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF0C6B911F53B63A00C331CE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF0C6B8F1F53B63A00C331CE /* Fabric.framework */; };
+		FF0C6B921F53B63A00C331CE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF0C6B901F53B63A00C331CE /* Crashlytics.framework */; };
+		FFA65DA51F4B10980024CA65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA65DA41F4B10980024CA65 /* AppDelegate.swift */; };
+		FFA65DAA1F4B10980024CA65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DA81F4B10980024CA65 /* Main.storyboard */; };
+		FFA65DAC1F4B10980024CA65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DAB1F4B10980024CA65 /* Assets.xcassets */; };
+		FFA65DAF1F4B10980024CA65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DAD1F4B10980024CA65 /* LaunchScreen.storyboard */; };
+		FFA65DBA1F4B10980024CA65 /* chejungTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA65DB91F4B10980024CA65 /* chejungTests.swift */; };
+		FFA65DC91F4B10A40024CA65 /* CosmosDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA65DC61F4B10A40024CA65 /* CosmosDistrib.swift */; };
+		FFA65DCA1F4B10A40024CA65 /* SlideInLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA65DC71F4B10A40024CA65 /* SlideInLauncher.swift */; };
+		FFA65DCB1F4B10A40024CA65 /* UIBuilderCosmos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA65DC81F4B10A40024CA65 /* UIBuilderCosmos.swift */; };
+		FFA65DE21F4B10AC0024CA65 /* Binggrae-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DD31F4B10AC0024CA65 /* Binggrae-Bold.otf */; };
+		FFA65DE31F4B10AC0024CA65 /* Binggrae.otf in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DD41F4B10AC0024CA65 /* Binggrae.otf */; };
+		FFA65DE51F4B10AC0024CA65 /* NanumBarunpenB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DD61F4B10AC0024CA65 /* NanumBarunpenB.ttf */; };
+		FFA65DE61F4B10AC0024CA65 /* NanumBarunpenR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DD71F4B10AC0024CA65 /* NanumBarunpenR.ttf */; };
+		FFA65DED1F4B10F80024CA65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA65DEC1F4B10F80024CA65 /* ViewController.swift */; };
+		FFA65DF11F4B25010024CA65 /* DateAndTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA65DF01F4B25010024CA65 /* DateAndTime.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FFA65DB61F4B10980024CA65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFA65D991F4B10980024CA65 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFA65DA01F4B10980024CA65;
+			remoteInfo = chejung;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FF0C6B8F1F53B63A00C331CE /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		FF0C6B901F53B63A00C331CE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		FFA65DA11F4B10980024CA65 /* chejung.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chejung.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFA65DA41F4B10980024CA65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FFA65DA91F4B10980024CA65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FFA65DAB1F4B10980024CA65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FFA65DAE1F4B10980024CA65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FFA65DB01F4B10980024CA65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFA65DB51F4B10980024CA65 /* chejungTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chejungTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFA65DB91F4B10980024CA65 /* chejungTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chejungTests.swift; sourceTree = "<group>"; };
+		FFA65DBB1F4B10980024CA65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFA65DC61F4B10A40024CA65 /* CosmosDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CosmosDistrib.swift; path = slideInTutorial/CosmosDistrib.swift; sourceTree = "<group>"; };
+		FFA65DC71F4B10A40024CA65 /* SlideInLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlideInLauncher.swift; path = slideInTutorial/SlideInLauncher.swift; sourceTree = "<group>"; };
+		FFA65DC81F4B10A40024CA65 /* UIBuilderCosmos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIBuilderCosmos.swift; path = slideInTutorial/UIBuilderCosmos.swift; sourceTree = "<group>"; };
+		FFA65DD31F4B10AC0024CA65 /* Binggrae-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Binggrae-Bold.otf"; path = "ralala_first/Binggrae-Bold.otf"; sourceTree = "<group>"; };
+		FFA65DD41F4B10AC0024CA65 /* Binggrae.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Binggrae.otf; path = ralala_first/Binggrae.otf; sourceTree = "<group>"; };
+		FFA65DD61F4B10AC0024CA65 /* NanumBarunpenB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumBarunpenB.ttf; path = ralala_first/NanumBarunpenB.ttf; sourceTree = "<group>"; };
+		FFA65DD71F4B10AC0024CA65 /* NanumBarunpenR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumBarunpenR.ttf; path = ralala_first/NanumBarunpenR.ttf; sourceTree = "<group>"; };
+		FFA65DEC1F4B10F80024CA65 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FFA65DF01F4B25010024CA65 /* DateAndTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateAndTime.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FFA65D9E1F4B10980024CA65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF0C6B921F53B63A00C331CE /* Crashlytics.framework in Frameworks */,
+				FF0C6B911F53B63A00C331CE /* Fabric.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFA65DB21F4B10980024CA65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FFA65D981F4B10980024CA65 = {
+			isa = PBXGroup;
+			children = (
+				FFA65DA31F4B10980024CA65 /* chejung */,
+				FFA65DB81F4B10980024CA65 /* chejungTests */,
+				FFA65DA21F4B10980024CA65 /* Products */,
+				FF0C6B8F1F53B63A00C331CE /* Fabric.framework */,
+				FF0C6B901F53B63A00C331CE /* Crashlytics.framework */,
+			);
+			sourceTree = "<group>";
+		};
+		FFA65DA21F4B10980024CA65 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFA65DA11F4B10980024CA65 /* chejung.app */,
+				FFA65DB51F4B10980024CA65 /* chejungTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FFA65DA31F4B10980024CA65 /* chejung */ = {
+			isa = PBXGroup;
+			children = (
+				FFA65DEB1F4B10BF0024CA65 /* Fonts */,
+				FFA65DEE1F4B11390024CA65 /* Extension */,
+				FFA65DEF1F4B114E0024CA65 /* Custom Class */,
+				FFA65DA41F4B10980024CA65 /* AppDelegate.swift */,
+				FFA65DA81F4B10980024CA65 /* Main.storyboard */,
+				FFA65DAB1F4B10980024CA65 /* Assets.xcassets */,
+				FFA65DAD1F4B10980024CA65 /* LaunchScreen.storyboard */,
+				FFA65DEC1F4B10F80024CA65 /* ViewController.swift */,
+				FFA65DB01F4B10980024CA65 /* Info.plist */,
+			);
+			path = chejung;
+			sourceTree = "<group>";
+		};
+		FFA65DB81F4B10980024CA65 /* chejungTests */ = {
+			isa = PBXGroup;
+			children = (
+				FFA65DB91F4B10980024CA65 /* chejungTests.swift */,
+				FFA65DBB1F4B10980024CA65 /* Info.plist */,
+			);
+			path = chejungTests;
+			sourceTree = "<group>";
+		};
+		FFA65DEB1F4B10BF0024CA65 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FFA65DD61F4B10AC0024CA65 /* NanumBarunpenB.ttf */,
+				FFA65DD71F4B10AC0024CA65 /* NanumBarunpenR.ttf */,
+				FFA65DD31F4B10AC0024CA65 /* Binggrae-Bold.otf */,
+				FFA65DD41F4B10AC0024CA65 /* Binggrae.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		FFA65DEE1F4B11390024CA65 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FFA65DC61F4B10A40024CA65 /* CosmosDistrib.swift */,
+				FFA65DC81F4B10A40024CA65 /* UIBuilderCosmos.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		FFA65DEF1F4B114E0024CA65 /* Custom Class */ = {
+			isa = PBXGroup;
+			children = (
+				FFA65DF01F4B25010024CA65 /* DateAndTime.swift */,
+				FFA65DC71F4B10A40024CA65 /* SlideInLauncher.swift */,
+			);
+			name = "Custom Class";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FFA65DA01F4B10980024CA65 /* chejung */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFA65DBE1F4B10980024CA65 /* Build configuration list for PBXNativeTarget "chejung" */;
+			buildPhases = (
+				FFA65D9D1F4B10980024CA65 /* Sources */,
+				FFA65D9E1F4B10980024CA65 /* Frameworks */,
+				FFA65D9F1F4B10980024CA65 /* Resources */,
+				FF0C6B8E1F53B61C00C331CE /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = chejung;
+			productName = chejung;
+			productReference = FFA65DA11F4B10980024CA65 /* chejung.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FFA65DB41F4B10980024CA65 /* chejungTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFA65DC11F4B10980024CA65 /* Build configuration list for PBXNativeTarget "chejungTests" */;
+			buildPhases = (
+				FFA65DB11F4B10980024CA65 /* Sources */,
+				FFA65DB21F4B10980024CA65 /* Frameworks */,
+				FFA65DB31F4B10980024CA65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFA65DB71F4B10980024CA65 /* PBXTargetDependency */,
+			);
+			name = chejungTests;
+			productName = chejungTests;
+			productReference = FFA65DB51F4B10980024CA65 /* chejungTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FFA65D991F4B10980024CA65 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Clutch Studio";
+				TargetAttributes = {
+					FFA65DA01F4B10980024CA65 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = A26J2FN32L;
+						ProvisioningStyle = Automatic;
+					};
+					FFA65DB41F4B10980024CA65 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = A26J2FN32L;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FFA65DA01F4B10980024CA65;
+					};
+				};
+			};
+			buildConfigurationList = FFA65D9C1F4B10980024CA65 /* Build configuration list for PBXProject "chejung" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FFA65D981F4B10980024CA65;
+			productRefGroup = FFA65DA21F4B10980024CA65 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FFA65DA01F4B10980024CA65 /* chejung */,
+				FFA65DB41F4B10980024CA65 /* chejungTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FFA65D9F1F4B10980024CA65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFA65DE61F4B10AC0024CA65 /* NanumBarunpenR.ttf in Resources */,
+				FFA65DAF1F4B10980024CA65 /* LaunchScreen.storyboard in Resources */,
+				FFA65DAC1F4B10980024CA65 /* Assets.xcassets in Resources */,
+				FFA65DE31F4B10AC0024CA65 /* Binggrae.otf in Resources */,
+				FFA65DE21F4B10AC0024CA65 /* Binggrae-Bold.otf in Resources */,
+				FFA65DE51F4B10AC0024CA65 /* NanumBarunpenB.ttf in Resources */,
+				FFA65DAA1F4B10980024CA65 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFA65DB31F4B10980024CA65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FF0C6B8E1F53B61C00C331CE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 293cdf9987f4f052b9e06ec44eba0ad0c934bffb e5c197c14cef60368d6e65c478f35a53faa0d6ce01cedfa743d7fbad75e12aa9";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FFA65D9D1F4B10980024CA65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFA65DF11F4B25010024CA65 /* DateAndTime.swift in Sources */,
+				FFA65DED1F4B10F80024CA65 /* ViewController.swift in Sources */,
+				FFA65DA51F4B10980024CA65 /* AppDelegate.swift in Sources */,
+				FFA65DCA1F4B10A40024CA65 /* SlideInLauncher.swift in Sources */,
+				FFA65DCB1F4B10A40024CA65 /* UIBuilderCosmos.swift in Sources */,
+				FFA65DC91F4B10A40024CA65 /* CosmosDistrib.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFA65DB11F4B10980024CA65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFA65DBA1F4B10980024CA65 /* chejungTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FFA65DB71F4B10980024CA65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFA65DA01F4B10980024CA65 /* chejung */;
+			targetProxy = FFA65DB61F4B10980024CA65 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FFA65DA81F4B10980024CA65 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFA65DA91F4B10980024CA65 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FFA65DAD1F4B10980024CA65 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFA65DAE1F4B10980024CA65 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FFA65DBC1F4B10980024CA65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FFA65DBD1F4B10980024CA65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FFA65DBF1F4B10980024CA65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A26J2FN32L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = chejung/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hsyun.chejung;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FFA65DC01F4B10980024CA65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A26J2FN32L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = chejung/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hsyun.chejung;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		FFA65DC21F4B10980024CA65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = A26J2FN32L;
+				INFOPLIST_FILE = chejungTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hsyun.chejungTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/chejung.app/chejung";
+			};
+			name = Debug;
+		};
+		FFA65DC31F4B10980024CA65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = A26J2FN32L;
+				INFOPLIST_FILE = chejungTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hsyun.chejungTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/chejung.app/chejung";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FFA65D9C1F4B10980024CA65 /* Build configuration list for PBXProject "chejung" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFA65DBC1F4B10980024CA65 /* Debug */,
+				FFA65DBD1F4B10980024CA65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFA65DBE1F4B10980024CA65 /* Build configuration list for PBXNativeTarget "chejung" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFA65DBF1F4B10980024CA65 /* Debug */,
+				FFA65DC01F4B10980024CA65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFA65DC11F4B10980024CA65 /* Build configuration list for PBXNativeTarget "chejungTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFA65DC21F4B10980024CA65 /* Debug */,
+				FFA65DC31F4B10980024CA65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FFA65D991F4B10980024CA65 /* Project object */;
+}
