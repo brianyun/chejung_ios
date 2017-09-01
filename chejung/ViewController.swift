@@ -71,7 +71,6 @@ class ViewController: UIViewController {
     var monthLabel = UILabel()
     var dayLabel = UILabel()
     var weekDayLabel = UILabel()
-    var mealLabel = UILabel()
     
     var morningButton = UIButton()
     var lunchButton = UIButton()
@@ -83,7 +82,7 @@ class ViewController: UIViewController {
     var menu3 = UILabel()
     var menu4 = UILabel()
     var menuSpecial = UILabel()
-    
+    var specialLabel = UILabel()
     var ratingBtn = UIButton()
     
     
@@ -104,67 +103,67 @@ class ViewController: UIViewController {
         let labelArr = dateAndTime.setMonthDayString(date: dateAndTime.date, meal: dateAndTime.meal, weekDay: dateAndTime.weekDay)
         
         
-        self.backgroundView = self.appDelegate.ub.buildImageView(target: self.backgroundView, image: "red_1", contentMode: .scaleToFill, x: 0, y: UIApplication.shared.statusBarFrame.height, width: self.view.frame.width, height: self.view.frame.height*0.72)
+        self.backgroundView = self.appDelegate.ub.buildImageView(target: self.backgroundView, image: String(self.meal), contentMode: .scaleToFill, x: Ux(63), y: UIApplication.shared.statusBarFrame.height, width: Ux(356), height: Uy(504))
         self.backgroundView.isUserInteractionEnabled = true
         
         
-        self.monthLabel = self.appDelegate.ub.buildLabel(target: self.monthLabel, text: labelArr.month, color: "#C0392B", textAlignment: .center, x: 10, y: UIApplication.shared.statusBarFrame.height, width: 50, height: 50)
+        self.monthLabel = self.appDelegate.ub.buildLabel(target: self.monthLabel, text: labelArr.month, color: "#C0392B", textAlignment: .center, x: Ux(48), y: UIApplication.shared.statusBarFrame.height+Uy(29), width: Ux(49), height: Uy(40))
         self.monthLabel.font = UIFont(name: "NanumBarunpen-Bold", size: 25.0)
-        self.monthLabel.backgroundColor = self.appDelegate.ub.hexToUIColor("#EEEEEE")
         
         
-        self.dayLabel = self.appDelegate.ub.buildLabel(target: self.dayLabel, text: labelArr.day, color: "#C0392B", textAlignment: .center, x: 10, y: UIApplication.shared.statusBarFrame.height + 50, width: 50, height: 50)
+        self.dayLabel = self.appDelegate.ub.buildLabel(target: self.dayLabel, text: labelArr.day, color: "#C0392B", textAlignment: .center, x: Ux(47), y: UIApplication.shared.statusBarFrame.height+Uy(69), width: Ux(49), height: Uy(40))
         self.dayLabel.font = UIFont(name: "NanumBarunpen-Bold", size: 25.0)
-        self.dayLabel.backgroundColor = self.appDelegate.ub.hexToUIColor("#DDDDDD")
         
         
-        self.weekDayLabel = self.appDelegate.ub.buildLabel(target: self.weekDayLabel, text: labelArr.weekDay, color: "#C0392B", textAlignment: .center, x: 60, y: UIApplication.shared.statusBarFrame.height, width: 50, height: 50)
+        self.weekDayLabel = self.appDelegate.ub.buildLabel(target: self.weekDayLabel, text: labelArr.weekDay, color: "#C0392B", textAlignment: .center, x: Ux(49), y: UIApplication.shared.statusBarFrame.height+Uy(112), width: Ux(49), height: Uy(40))
         self.weekDayLabel.font = UIFont(name: "NanumBarunpen-Bold", size: 25.0)
-        self.weekDayLabel.backgroundColor = self.appDelegate.ub.hexToUIColor("#DDDDDD")
         
-        
-        
-        self.mealLabel = self.appDelegate.ub.buildLabel(target: self.mealLabel, text: String(self.meal), color: "#FFFFFF", textAlignment: .center, x: 10, y: UIApplication.shared.statusBarFrame.height + 100, width: 50, height: 50)
-        self.mealLabel.font = UIFont(name: "NanumBarunpen-Bold", size: 25.0)
-        self.mealLabel.backgroundColor = self.appDelegate.ub.hexToUIColor("#455681")
         
         //현재 상황은, 8.25 (m=3) -> 8.26 (m=2) -> 8.27 (m=2) -> 8.26 (m=2) -> 8.25 (m=2). 좌우 스와이프해서 오늘로 돌아와도
         //meal은 2로 통일된다. 새로고침을 해야지만 현재 meal이 반영된다.
-        //이게 문제인지는 잘 모르겠다. 해결은 어렵지 않음.
+        //해결할 필요가 있을지 잘 모르겠다. 해결은 어렵지 않음.
         
         
+        //글자크기 adjust!
         
-        self.morningButton = self.appDelegate.ub.buildButton(target: self.morningButton, title: "아침", titleColor: "#FFFFFF", imageName: "", backgroundColor: "#000000", x: self.view.frame.width*0.068, y: UIApplication.shared.statusBarFrame.height + self.view.frame.height*0.316, width: self.view.frame.width*0.17, height: self.view.frame.height*0.072)
+        
+        self.morningButton = self.appDelegate.ub.buildButton(target: self.morningButton, title: "아침", titleColor: "#FFFFFF", imageName: "", backgroundColor: "", x: Ux(66), y: UIApplication.shared.statusBarFrame.height+Uy(269), width: Ux(49), height: Uy(23))
         self.morningButton.titleLabel?.font = UIFont(name: "NanumBarunpen-Bold", size: 30.0)
         
         
-        self.lunchButton = self.appDelegate.ub.buildButton(target: self.lunchButton, title: "점심", titleColor: "#FFFFFF", imageName: "", backgroundColor: "", x: self.view.frame.width*0.075, y: 280, width: 80, height: 80)
+        self.lunchButton = self.appDelegate.ub.buildButton(target: self.lunchButton, title: "점심", titleColor: "#FFFFFF", imageName: "", backgroundColor: "", x: Ux(66), y: UIApplication.shared.statusBarFrame.height+Uy(365), width: Ux(49), height: Uy(23))
         self.lunchButton.titleLabel?.font = UIFont(name: "NanumBarunpen-Bold", size: 30.0)
         
         
-        self.dinnerBtn = self.appDelegate.ub.buildButton(target: self.dinnerBtn, title: "저녁", titleColor: "#FFFFFF", imageName: "", backgroundColor: "", x: self.view.frame.width*0.075, y: 360, width: 80, height: 80)
+        self.dinnerBtn = self.appDelegate.ub.buildButton(target: self.dinnerBtn, title: "저녁", titleColor: "#FFFFFF", imageName: "", backgroundColor: "", x: Ux(66), y: UIApplication.shared.statusBarFrame.height+Uy(456), width: Ux(49), height: Uy(23))
         self.dinnerBtn.titleLabel?.font = UIFont(name: "NanumBarunpen-Bold", size: 30.0)
         
         
         
         self.menuView.backgroundColor = UIColor.clear
-        self.menuView.frame = CGRect(x: 100, y: UIApplication.shared.statusBarFrame.height, width: self.view.frame.width - 100, height: 500 - UIApplication.shared.statusBarFrame.height)
+        self.menuView.frame = CGRect(x: Ux(240), y: UIApplication.shared.statusBarFrame.height, width: Ux(270), height: Uy(504))
+
         
         
         //menu label 설정은 좀 나중에 해도 될 것 같다. 아니다. 선언은 처음에 다 하고, 나중에 텍스트만 바꿔주자.
-        self.menu1 = self.appDelegate.ub.buildLabel(target: self.menu1, text: "menu1", color: "#FFFFFF", textAlignment: .center, x: self.menuView.frame.origin.x, y: UIApplication.shared.statusBarFrame.height + 40, width: self.menuView.frame.width, height: 60)
+        self.menu1 = self.appDelegate.ub.buildLabel(target: self.menu1, text: "menu1", color: "#FFFFFF", textAlignment: .center, x: Ux(239), y: UIApplication.shared.statusBarFrame.height+Uy(99), width: Ux(178), height: Uy(23))
         self.menu1.font = UIFont(name: "NanumBarunpen", size: 25.0)
         
-        self.menu2 = self.appDelegate.ub.buildLabel(target: self.menu2, text: "menu2", color: "#FFFFFF", textAlignment: .center, x: self.menuView.frame.origin.x, y: UIApplication.shared.statusBarFrame.height + 120, width: self.menuView.frame.width, height: 60)
+        self.menu2 = self.appDelegate.ub.buildLabel(target: self.menu2, text: "menu2", color: "#FFFFFF", textAlignment: .center, x: Ux(239), y: UIApplication.shared.statusBarFrame.height+Uy(150), width: Ux(178), height: Uy(23))
         self.menu2.font = UIFont(name: "NanumBarunpen", size: 25.0)
         
-        self.menu3 = self.appDelegate.ub.buildLabel(target: self.menu3, text: "menu3", color: "#FFFFFF", textAlignment: .center, x: self.menuView.frame.origin.x, y: UIApplication.shared.statusBarFrame.height + 200, width: self.menuView.frame.width, height: 60)
+        self.menu3 = self.appDelegate.ub.buildLabel(target: self.menu3, text: "menu3", color: "#FFFFFF", textAlignment: .center, x: Ux(239), y: UIApplication.shared.statusBarFrame.height+Uy(202), width: Ux(178), height: Uy(23))
         self.menu3.font = UIFont(name: "NanumBarunpen", size: 25.0)
         
-        self.menu4 = self.appDelegate.ub.buildLabel(target: self.menu4, text: "menu4", color: "#FFFFFF", textAlignment: .center, x: self.menuView.frame.origin.x, y: UIApplication.shared.statusBarFrame.height + 280, width: self.menuView.frame.width, height: 60)
+        self.menu4 = self.appDelegate.ub.buildLabel(target: self.menu4, text: "menu4", color: "#FFFFFF", textAlignment: .center, x: Ux(239), y: UIApplication.shared.statusBarFrame.height+Uy(254), width: Ux(178), height: Uy(23))
         self.menu4.font = UIFont(name: "NanumBarunpen", size: 25.0)
         
-        self.menuSpecial = self.appDelegate.ub.buildLabel(target: self.menuSpecial, text: "menuSpecial", color: "#FFFFFF", textAlignment: .center, x: self.menuView.frame.origin.x, y: UIApplication.shared.statusBarFrame.height + 360, width: self.menuView.frame.width, height: 60)
+        
+        self.specialLabel = self.appDelegate.ub.buildLabel(target: self.specialLabel, text: "<특식>", color: "#FFFFFF", textAlignment: .center, x: Ux(239), y: UIApplication.shared.statusBarFrame.height+Uy(339), width: Ux(178), height: Uy(23))
+        self.menu4.font = UIFont(name: "NanumBarunpen", size: 25.0)
+        
+        
+        self.menuSpecial = self.appDelegate.ub.buildLabel(target: self.menuSpecial, text: "menuSpecial", color: "#FFFFFF", textAlignment: .center, x: Ux(239), y: UIApplication.shared.statusBarFrame.height+Uy(383), width: Ux(178), height: Uy(23))
         self.menuSpecial.font = UIFont(name: "NanumBarunpen", size: 25.0)
         
         
@@ -185,7 +184,6 @@ class ViewController: UIViewController {
         self.view.addSubview(monthLabel)
         self.view.addSubview(dayLabel)
         self.view.addSubview(weekDayLabel)
-        self.view.addSubview(mealLabel)
         
         self.view.addSubview(morningButton)
         self.view.addSubview(lunchButton)
@@ -241,7 +239,7 @@ class ViewController: UIViewController {
     
         print("DEBUG: func touchMorningBtn")
         self.meal = 1
-        self.mealLabel.text = String(self.meal)
+        self.backgroundView.image = UIImage(named: "1")
         self.sendQuery(qDate: self.date, qMeal: self.meal)
         self.shareVariable()
     }
@@ -252,7 +250,7 @@ class ViewController: UIViewController {
     
         print("DEBUG: func touchLunchBtn")
         self.meal = 2
-        self.mealLabel.text = String(self.meal)
+        self.backgroundView.image = UIImage(named: "2")
         self.sendQuery(qDate: self.date, qMeal: self.meal)
         self.shareVariable()
     }
@@ -263,7 +261,7 @@ class ViewController: UIViewController {
     
         print("DEBUG: func touchDinnerBtn")
         self.meal = 3
-        self.mealLabel.text = String(self.meal)
+        self.backgroundView.image = UIImage(named: "3")
         self.sendQuery(qDate: self.date, qMeal: self.meal)
         self.shareVariable()
     }
@@ -285,7 +283,6 @@ class ViewController: UIViewController {
         self.dayLabel.text = labelArr.nextDay
         self.weekDayLabel.text = dateAndTime.weekDayToString(weekDayInt: labelArr.nextWeekDay)
         
-        self.mealLabel.text = String(self.meal)
         self.sendQuery(qDate: self.date, qMeal: self.meal)
         self.shareVariable()
     }
@@ -311,7 +308,6 @@ class ViewController: UIViewController {
         self.dayLabel.text = labelArr.prevDay
         self.weekDayLabel.text = dateAndTime.weekDayToString(weekDayInt: labelArr.prevWeekDay)
         
-        self.mealLabel.text = String(self.meal)
         self.sendQuery(qDate: self.date, qMeal: self.meal)
         self.shareVariable()
     }
@@ -329,7 +325,6 @@ class ViewController: UIViewController {
         self.monthLabel.text = labelArr.month
         self.dayLabel.text = labelArr.day
         self.weekDayLabel.text = labelArr.weekDay
-        self.mealLabel.text = String(self.meal) //이게 6으로 변하면서 에러남.
         
         self.sendQuery(qDate: self.date, qMeal: self.meal)
         self.shareVariable()
@@ -347,6 +342,18 @@ class ViewController: UIViewController {
     
     
     
+    
+    
+    func Ux(_ n: CGFloat) -> CGFloat {
+        
+        return n*(self.view.frame.width/375)
+    }
+    
+    
+    func Uy(_ n: CGFloat) -> CGFloat {
+        
+        return n*(self.view.frame.height/667)
+    }
     
     
     
