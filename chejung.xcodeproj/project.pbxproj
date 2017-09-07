@@ -9,20 +9,21 @@
 /* Begin PBXBuildFile section */
 		FF0C6B911F53B63A00C331CE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF0C6B8F1F53B63A00C331CE /* Fabric.framework */; };
 		FF0C6B921F53B63A00C331CE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF0C6B901F53B63A00C331CE /* Crashlytics.framework */; };
+		FF6ECEFF1F60E5020061F31A /* CosmosDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6ECEFA1F60E5020061F31A /* CosmosDistrib.swift */; };
+		FF6ECF001F60E5020061F31A /* DateAndTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6ECEFB1F60E5020061F31A /* DateAndTime.swift */; };
+		FF6ECF011F60E5020061F31A /* NewLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6ECEFC1F60E5020061F31A /* NewLauncher.swift */; };
+		FF6ECF021F60E5020061F31A /* SlideInLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6ECEFD1F60E5020061F31A /* SlideInLauncher.swift */; };
+		FF6ECF031F60E5020061F31A /* UIBuilderCosmos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6ECEFE1F60E5020061F31A /* UIBuilderCosmos.swift */; };
 		FFA65DA51F4B10980024CA65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA65DA41F4B10980024CA65 /* AppDelegate.swift */; };
 		FFA65DAA1F4B10980024CA65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DA81F4B10980024CA65 /* Main.storyboard */; };
 		FFA65DAC1F4B10980024CA65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DAB1F4B10980024CA65 /* Assets.xcassets */; };
 		FFA65DAF1F4B10980024CA65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DAD1F4B10980024CA65 /* LaunchScreen.storyboard */; };
 		FFA65DBA1F4B10980024CA65 /* chejungTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA65DB91F4B10980024CA65 /* chejungTests.swift */; };
-		FFA65DC91F4B10A40024CA65 /* CosmosDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA65DC61F4B10A40024CA65 /* CosmosDistrib.swift */; };
-		FFA65DCA1F4B10A40024CA65 /* SlideInLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA65DC71F4B10A40024CA65 /* SlideInLauncher.swift */; };
-		FFA65DCB1F4B10A40024CA65 /* UIBuilderCosmos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA65DC81F4B10A40024CA65 /* UIBuilderCosmos.swift */; };
 		FFA65DE21F4B10AC0024CA65 /* Binggrae-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DD31F4B10AC0024CA65 /* Binggrae-Bold.otf */; };
 		FFA65DE31F4B10AC0024CA65 /* Binggrae.otf in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DD41F4B10AC0024CA65 /* Binggrae.otf */; };
 		FFA65DE51F4B10AC0024CA65 /* NanumBarunpenB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DD61F4B10AC0024CA65 /* NanumBarunpenB.ttf */; };
 		FFA65DE61F4B10AC0024CA65 /* NanumBarunpenR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DD71F4B10AC0024CA65 /* NanumBarunpenR.ttf */; };
 		FFA65DED1F4B10F80024CA65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA65DEC1F4B10F80024CA65 /* ViewController.swift */; };
-		FFA65DF11F4B25010024CA65 /* DateAndTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA65DF01F4B25010024CA65 /* DateAndTime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,11 @@
 /* Begin PBXFileReference section */
 		FF0C6B8F1F53B63A00C331CE /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		FF0C6B901F53B63A00C331CE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		FF6ECEFA1F60E5020061F31A /* CosmosDistrib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CosmosDistrib.swift; path = "Custom Class/CosmosDistrib.swift"; sourceTree = "<group>"; };
+		FF6ECEFB1F60E5020061F31A /* DateAndTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateAndTime.swift; path = "Custom Class/DateAndTime.swift"; sourceTree = "<group>"; };
+		FF6ECEFC1F60E5020061F31A /* NewLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewLauncher.swift; path = "Custom Class/NewLauncher.swift"; sourceTree = "<group>"; };
+		FF6ECEFD1F60E5020061F31A /* SlideInLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SlideInLauncher.swift; path = "Custom Class/SlideInLauncher.swift"; sourceTree = "<group>"; };
+		FF6ECEFE1F60E5020061F31A /* UIBuilderCosmos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIBuilderCosmos.swift; path = "Custom Class/UIBuilderCosmos.swift"; sourceTree = "<group>"; };
 		FFA65DA11F4B10980024CA65 /* chejung.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chejung.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFA65DA41F4B10980024CA65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFA65DA91F4B10980024CA65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -47,15 +53,11 @@
 		FFA65DB51F4B10980024CA65 /* chejungTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chejungTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFA65DB91F4B10980024CA65 /* chejungTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chejungTests.swift; sourceTree = "<group>"; };
 		FFA65DBB1F4B10980024CA65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FFA65DC61F4B10A40024CA65 /* CosmosDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CosmosDistrib.swift; path = slideInTutorial/CosmosDistrib.swift; sourceTree = "<group>"; };
-		FFA65DC71F4B10A40024CA65 /* SlideInLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlideInLauncher.swift; path = slideInTutorial/SlideInLauncher.swift; sourceTree = "<group>"; };
-		FFA65DC81F4B10A40024CA65 /* UIBuilderCosmos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIBuilderCosmos.swift; path = slideInTutorial/UIBuilderCosmos.swift; sourceTree = "<group>"; };
 		FFA65DD31F4B10AC0024CA65 /* Binggrae-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Binggrae-Bold.otf"; path = "ralala_first/Binggrae-Bold.otf"; sourceTree = "<group>"; };
 		FFA65DD41F4B10AC0024CA65 /* Binggrae.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Binggrae.otf; path = ralala_first/Binggrae.otf; sourceTree = "<group>"; };
 		FFA65DD61F4B10AC0024CA65 /* NanumBarunpenB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumBarunpenB.ttf; path = ralala_first/NanumBarunpenB.ttf; sourceTree = "<group>"; };
 		FFA65DD71F4B10AC0024CA65 /* NanumBarunpenR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumBarunpenR.ttf; path = ralala_first/NanumBarunpenR.ttf; sourceTree = "<group>"; };
 		FFA65DEC1F4B10F80024CA65 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FFA65DF01F4B25010024CA65 /* DateAndTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateAndTime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,8 +139,8 @@
 		FFA65DEE1F4B11390024CA65 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				FFA65DC61F4B10A40024CA65 /* CosmosDistrib.swift */,
-				FFA65DC81F4B10A40024CA65 /* UIBuilderCosmos.swift */,
+				FF6ECEFA1F60E5020061F31A /* CosmosDistrib.swift */,
+				FF6ECEFE1F60E5020061F31A /* UIBuilderCosmos.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -146,8 +148,9 @@
 		FFA65DEF1F4B114E0024CA65 /* Custom Class */ = {
 			isa = PBXGroup;
 			children = (
-				FFA65DF01F4B25010024CA65 /* DateAndTime.swift */,
-				FFA65DC71F4B10A40024CA65 /* SlideInLauncher.swift */,
+				FF6ECEFB1F60E5020061F31A /* DateAndTime.swift */,
+				FF6ECEFC1F60E5020061F31A /* NewLauncher.swift */,
+				FF6ECEFD1F60E5020061F31A /* SlideInLauncher.swift */,
 			);
 			name = "Custom Class";
 			sourceTree = "<group>";
@@ -278,12 +281,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFA65DF11F4B25010024CA65 /* DateAndTime.swift in Sources */,
+				FF6ECEFF1F60E5020061F31A /* CosmosDistrib.swift in Sources */,
+				FF6ECF001F60E5020061F31A /* DateAndTime.swift in Sources */,
+				FF6ECF011F60E5020061F31A /* NewLauncher.swift in Sources */,
+				FF6ECF021F60E5020061F31A /* SlideInLauncher.swift in Sources */,
+				FF6ECF031F60E5020061F31A /* UIBuilderCosmos.swift in Sources */,
 				FFA65DED1F4B10F80024CA65 /* ViewController.swift in Sources */,
 				FFA65DA51F4B10980024CA65 /* AppDelegate.swift in Sources */,
-				FFA65DCA1F4B10A40024CA65 /* SlideInLauncher.swift in Sources */,
-				FFA65DCB1F4B10A40024CA65 /* UIBuilderCosmos.swift in Sources */,
-				FFA65DC91F4B10A40024CA65 /* CosmosDistrib.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,7 +435,7 @@
 				);
 				INFOPLIST_FILE = chejung/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hsyun.chejung;
+				PRODUCT_BUNDLE_IDENTIFIER = chejung;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -448,7 +452,7 @@
 				);
 				INFOPLIST_FILE = chejung/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hsyun.chejung;
+				PRODUCT_BUNDLE_IDENTIFIER = chejung;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        Thread.sleep(forTimeInterval: 0.3) //LaunchScreen 보여주기 위해 인위적으로 0.3초 멈춤.
         Fabric.with([Crashlytics.self])
         return true
     }

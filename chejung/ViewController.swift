@@ -99,7 +99,6 @@ class ViewController: UIViewController {
     var menu4 = UILabel()
     var menuSpecial = UILabel()
     var specialLabel = UILabel()
-    var ratingBtn = UIButton()
     
     var ratingLabel = UILabel()
     var ratingImageView = UIImageView()
@@ -185,17 +184,6 @@ class ViewController: UIViewController {
         
         
         
-        self.ratingBtn = self.appDelegate.ub.buildButton(target: self.ratingBtn, title: "오늘 밥은 몇 점?", titleColor: "#FFFFFF", imageName: "gray_bottom", backgroundColor: "", x: Ux(0), y: Uy(587), width: Ux(375), height: Uy(80))
-        
-        //self.ratingBtn.titleLabel?.backgroundColor = UIColor.blue
-        self.ratingBtn.titleLabel?.font = UIFont(name: "NanumBarunpen-Bold", size: min(Ux(25.0), Uy(25.0)))
-        self.ratingBtn.titleLabel?.sizeToFit()
-        
-        self.ratingBtn.titleEdgeInsets = UIEdgeInsets(top: 0, left: self.ratingBtn.currentImage!.size.width * -1, bottom: 0, right: 0)
-        
-        self.ratingBtn.contentMode = .scaleToFill
-        
-        
         
         self.ratingLabel = self.appDelegate.ub.buildLabel(target: self.ratingLabel, text: "오늘 밥은 몇 점?", color: "#FFFFFF", textAlignment: .center, x: Ux(0), y: Uy(587), width: Ux(375), height: Uy(80))
         self.ratingLabel.font = UIFont(name: "NanumBarunpen-Bold", size: min(Ux(25.0), Uy(25.0)))
@@ -236,7 +224,6 @@ class ViewController: UIViewController {
         
         //menu들을 menuView의 subview가 아니라, 전체 화면 view의 subview로 등록했음에 유의.
         
-        //self.view.addSubview(ratingBtn)
         self.view.addSubview(ratingImageView)
         self.view.addSubview(ratingLabel)
     }
@@ -253,22 +240,11 @@ class ViewController: UIViewController {
         swpLeft.direction = .left
         let swpRight = UISwipeGestureRecognizer(target: self, action: #selector(self.swpRight))
         swpRight.direction = .right
-        let swpDown = UISwipeGestureRecognizer(target: self, action: #selector(self.swpDown))
-        swpDown.direction = .down
-//        self.backgroundView.addGestureRecognizer(swpLeft)
-//        self.backgroundView.addGestureRecognizer(swpRight)
-//        self.backgroundView.addGestureRecognizer(swpDown)
         
         self.menuView.addGestureRecognizer(swpLeft)
         self.menuView.addGestureRecognizer(swpRight)
-        self.menuView.addGestureRecognizer(swpDown)
+        self.menuView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.swpDown)))
         
-        self.ratingBtn.addTarget(self, action: #selector(self.touchRatingBtn), for: .touchUpInside)
-        
-        
-        
-        
-        self.ratingLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.touchRatingBtn)))
         
         let tapRating = UILongPressGestureRecognizer(target: self, action: #selector(self.touchRatingBtn))
         tapRating.minimumPressDuration = 0
@@ -327,6 +303,7 @@ class ViewController: UIViewController {
         self.monthLabel.text = labelArr.nextMonth+"월"
         self.dayLabel.text = labelArr.nextDay+"일"
         self.weekDayLabel.text = dateAndTime.weekDayToString(weekDayInt: labelArr.nextWeekDay)
+        self.backgroundView.image = UIImage(named: "2") //연욱이 피드백받고 추가.
         
         self.sendQuery(qDate: self.date, qMeal: self.meal)
         self.shareVariable()
@@ -342,6 +319,7 @@ class ViewController: UIViewController {
         self.monthLabel.text = labelArr.prevMonth+"월"
         self.dayLabel.text = labelArr.prevDay+"일"
         self.weekDayLabel.text = dateAndTime.weekDayToString(weekDayInt: labelArr.prevWeekDay)
+        self.backgroundView.image = UIImage(named: "2")
         
         self.sendQuery(qDate: self.date, qMeal: self.meal)
         self.shareVariable()
@@ -356,6 +334,8 @@ class ViewController: UIViewController {
         self.meal = dateAndTime.meal
         self.weekDay = dateAndTime.weekDay
         let labelArr = dateAndTime.setMonthDayString(date: dateAndTime.date, meal: dateAndTime.meal, weekDay: dateAndTime.weekDay)
+        
+        self.backgroundView.image = UIImage(named: String(self.meal))
         
         self.monthLabel.text = labelArr.month+"월"
         self.dayLabel.text = labelArr.day+"일"
@@ -419,7 +399,7 @@ class ViewController: UIViewController {
             self.ratingImageView.image = UIImage(named: "dark_bottom")
             if gesture.state == .ended {
                 print("DEBUG: func touchRatingBtn")
-                slideInLauncher.showCurtain()
+                slideInLauncher.showSlide()
             }
         } else {
             self.ratingImageView.image = UIImage(named: "gray_bottom")
