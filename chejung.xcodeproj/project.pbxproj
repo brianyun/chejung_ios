@@ -12,15 +12,12 @@
 		FF6ECEFF1F60E5020061F31A /* CosmosDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6ECEFA1F60E5020061F31A /* CosmosDistrib.swift */; };
 		FF6ECF001F60E5020061F31A /* DateAndTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6ECEFB1F60E5020061F31A /* DateAndTime.swift */; };
 		FF6ECF011F60E5020061F31A /* NewLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6ECEFC1F60E5020061F31A /* NewLauncher.swift */; };
-		FF6ECF021F60E5020061F31A /* SlideInLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6ECEFD1F60E5020061F31A /* SlideInLauncher.swift */; };
 		FF6ECF031F60E5020061F31A /* UIBuilderCosmos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6ECEFE1F60E5020061F31A /* UIBuilderCosmos.swift */; };
 		FFA65DA51F4B10980024CA65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA65DA41F4B10980024CA65 /* AppDelegate.swift */; };
 		FFA65DAA1F4B10980024CA65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DA81F4B10980024CA65 /* Main.storyboard */; };
 		FFA65DAC1F4B10980024CA65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DAB1F4B10980024CA65 /* Assets.xcassets */; };
 		FFA65DAF1F4B10980024CA65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DAD1F4B10980024CA65 /* LaunchScreen.storyboard */; };
 		FFA65DBA1F4B10980024CA65 /* chejungTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA65DB91F4B10980024CA65 /* chejungTests.swift */; };
-		FFA65DE21F4B10AC0024CA65 /* Binggrae-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DD31F4B10AC0024CA65 /* Binggrae-Bold.otf */; };
-		FFA65DE31F4B10AC0024CA65 /* Binggrae.otf in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DD41F4B10AC0024CA65 /* Binggrae.otf */; };
 		FFA65DE51F4B10AC0024CA65 /* NanumBarunpenB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DD61F4B10AC0024CA65 /* NanumBarunpenB.ttf */; };
 		FFA65DE61F4B10AC0024CA65 /* NanumBarunpenR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DD71F4B10AC0024CA65 /* NanumBarunpenR.ttf */; };
 		FFA65DED1F4B10F80024CA65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA65DEC1F4B10F80024CA65 /* ViewController.swift */; };
@@ -42,7 +39,6 @@
 		FF6ECEFA1F60E5020061F31A /* CosmosDistrib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CosmosDistrib.swift; path = "Custom Class/CosmosDistrib.swift"; sourceTree = "<group>"; };
 		FF6ECEFB1F60E5020061F31A /* DateAndTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateAndTime.swift; path = "Custom Class/DateAndTime.swift"; sourceTree = "<group>"; };
 		FF6ECEFC1F60E5020061F31A /* NewLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewLauncher.swift; path = "Custom Class/NewLauncher.swift"; sourceTree = "<group>"; };
-		FF6ECEFD1F60E5020061F31A /* SlideInLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SlideInLauncher.swift; path = "Custom Class/SlideInLauncher.swift"; sourceTree = "<group>"; };
 		FF6ECEFE1F60E5020061F31A /* UIBuilderCosmos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIBuilderCosmos.swift; path = "Custom Class/UIBuilderCosmos.swift"; sourceTree = "<group>"; };
 		FFA65DA11F4B10980024CA65 /* chejung.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chejung.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFA65DA41F4B10980024CA65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,8 +49,6 @@
 		FFA65DB51F4B10980024CA65 /* chejungTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chejungTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFA65DB91F4B10980024CA65 /* chejungTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chejungTests.swift; sourceTree = "<group>"; };
 		FFA65DBB1F4B10980024CA65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FFA65DD31F4B10AC0024CA65 /* Binggrae-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Binggrae-Bold.otf"; path = "ralala_first/Binggrae-Bold.otf"; sourceTree = "<group>"; };
-		FFA65DD41F4B10AC0024CA65 /* Binggrae.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Binggrae.otf; path = ralala_first/Binggrae.otf; sourceTree = "<group>"; };
 		FFA65DD61F4B10AC0024CA65 /* NanumBarunpenB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumBarunpenB.ttf; path = ralala_first/NanumBarunpenB.ttf; sourceTree = "<group>"; };
 		FFA65DD71F4B10AC0024CA65 /* NanumBarunpenR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumBarunpenR.ttf; path = ralala_first/NanumBarunpenR.ttf; sourceTree = "<group>"; };
 		FFA65DEC1F4B10F80024CA65 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -130,8 +124,6 @@
 			children = (
 				FFA65DD61F4B10AC0024CA65 /* NanumBarunpenB.ttf */,
 				FFA65DD71F4B10AC0024CA65 /* NanumBarunpenR.ttf */,
-				FFA65DD31F4B10AC0024CA65 /* Binggrae-Bold.otf */,
-				FFA65DD41F4B10AC0024CA65 /* Binggrae.otf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -150,7 +142,6 @@
 			children = (
 				FF6ECEFB1F60E5020061F31A /* DateAndTime.swift */,
 				FF6ECEFC1F60E5020061F31A /* NewLauncher.swift */,
-				FF6ECEFD1F60E5020061F31A /* SlideInLauncher.swift */,
 			);
 			name = "Custom Class";
 			sourceTree = "<group>";
@@ -244,8 +235,6 @@
 				FFA65DE61F4B10AC0024CA65 /* NanumBarunpenR.ttf in Resources */,
 				FFA65DAF1F4B10980024CA65 /* LaunchScreen.storyboard in Resources */,
 				FFA65DAC1F4B10980024CA65 /* Assets.xcassets in Resources */,
-				FFA65DE31F4B10AC0024CA65 /* Binggrae.otf in Resources */,
-				FFA65DE21F4B10AC0024CA65 /* Binggrae-Bold.otf in Resources */,
 				FFA65DE51F4B10AC0024CA65 /* NanumBarunpenB.ttf in Resources */,
 				FFA65DAA1F4B10980024CA65 /* Main.storyboard in Resources */,
 			);
@@ -284,7 +273,6 @@
 				FF6ECEFF1F60E5020061F31A /* CosmosDistrib.swift in Sources */,
 				FF6ECF001F60E5020061F31A /* DateAndTime.swift in Sources */,
 				FF6ECF011F60E5020061F31A /* NewLauncher.swift in Sources */,
-				FF6ECF021F60E5020061F31A /* SlideInLauncher.swift in Sources */,
 				FF6ECF031F60E5020061F31A /* UIBuilderCosmos.swift in Sources */,
 				FFA65DED1F4B10F80024CA65 /* ViewController.swift in Sources */,
 				FFA65DA51F4B10980024CA65 /* AppDelegate.swift in Sources */,

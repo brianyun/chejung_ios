@@ -357,20 +357,8 @@ class ViewController: UIViewController {
     
     
     
-    
-    
-    func Ux(_ n: CGFloat) -> CGFloat {
-        
-        return n*(self.view.frame.width/375)
-    }
-    
-    
-    func Uy(_ n: CGFloat) -> CGFloat {
-        
-        return n*(self.view.frame.height/667)
-    }
-    
-    
+    func Ux(_ n: CGFloat) -> CGFloat { return n*(self.view.frame.width/375) }
+    func Uy(_ n: CGFloat) -> CGFloat { return n*(self.view.frame.height/667) }
     
     
     func adjustFontLabel(label: UILabel, style: String) {
@@ -388,7 +376,7 @@ class ViewController: UIViewController {
     
     
     
-    let slideInLauncher = SlideInLauncher()
+    let newLauncher = NewLauncher()
     
     func touchRatingBtn(gesture: UIPanGestureRecognizer) {
         
@@ -399,17 +387,15 @@ class ViewController: UIViewController {
             self.ratingImageView.image = UIImage(named: "dark_bottom")
             if gesture.state == .ended {
                 print("DEBUG: func touchRatingBtn")
-                slideInLauncher.showSlide()
+                newLauncher.showSlide()
             }
         } else {
             self.ratingImageView.image = UIImage(named: "gray_bottom")
         }
         
         if gesture.state == .ended {
-            print("DEBUG: gray")
             self.ratingImageView.image = UIImage(named: "gray_bottom")
         }
-        
     }
 
     
@@ -418,6 +404,7 @@ class ViewController: UIViewController {
     }
     
 }
+
 
 extension String {
     func toJSON() -> [[String: Any]]? {
