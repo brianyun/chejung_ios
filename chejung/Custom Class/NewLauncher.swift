@@ -80,7 +80,7 @@ class NewLauncher: NSObject, UITextFieldDelegate {
         
         
         
-        self.label2 = self.appDelegate.ub.buildLabel(target: self.label2, text: "별점을 매겨주세요!", color: "000000", textAlignment: .center, x: Vx(0), y: Vy(40), width: Vx(375), height: Vy(30))
+        self.label2 = self.appDelegate.ub.buildLabel(target: self.label2, text: "별점을 매겨주세요", color: "000000", textAlignment: .center, x: Vx(0), y: Vy(40), width: Vx(375), height: Vy(30))
         self.label2.font = UIFont(name: "NanumBarunpen", size: Vy(17.0))
         self.label2.textColor = self.appDelegate.ub.hexToUIColor("#C0392B")
         //확인하려고 만든 background color. 나중에 다 삭제해야됨.
@@ -99,7 +99,7 @@ class NewLauncher: NSObject, UITextFieldDelegate {
         
         
         
-        self.label3 = self.appDelegate.ub.buildLabel(target: self.label3, text: "의견을 자유롭게 써주세요!", color: "000000", textAlignment: .center, x: Vx(0), y: Vy(125), width: Vx(375), height: Vy(40))
+        self.label3 = self.appDelegate.ub.buildLabel(target: self.label3, text: "의견 하나하나를 다 듣고있어요.", color: "000000", textAlignment: .center, x: Vx(0), y: Vy(125), width: Vx(375), height: Vy(40))
         self.label3.font = UIFont(name: "NanumBarunpen", size: Vy(20.0))
         self.label3.textColor = self.appDelegate.ub.hexToUIColor("#C0392B")
         //확인하려고 만든 background color. 나중에 다 삭제해야됨.
@@ -473,18 +473,18 @@ class NewLauncher: NSObject, UITextFieldDelegate {
         didSet {
             
             switch inputRating {
-            case 0.0: self.setLabelText(label1Txt: "0 점", label2Txt: "별점을 매겨주세요!")
+            case 0.0: self.setLabelText(label1Txt: "0 점", label2Txt: "별점을 매겨주세요")
             case 0.5: self.setLabelText(label1Txt: "0.5 점", label2Txt: "살기 위해 먹는다...")
             case 1.0: self.setLabelText(label1Txt: "1 점", label2Txt: "음 이맛은... 노맛!")
-            case 1.5: self.setLabelText(label1Txt: "1.5 점", label2Txt: "오늘 맛없다고 소문내야지")
+            case 1.5: self.setLabelText(label1Txt: "1.5 점", label2Txt: "오늘 맛없다고 소문낼꺼야")
             case 2.0: self.setLabelText(label1Txt: "2 점", label2Txt: "언냐들 나만 맛없어?") //"맛없는건 기분탓인가?"
             case 2.5: self.setLabelText(label1Txt: "2.5 점", label2Txt: "나는 아무 생각이 없다. 왜냐하면 아무 생각이 없기 때문이다.")
-            case 3.0: self.setLabelText(label1Txt: "3 점", label2Txt: "무난무난")
-            case 3.5: self.setLabelText(label1Txt: "3.5 점", label2Txt: "이정도면 뭐 꽤 맛있군.")
-            case 4.0: self.setLabelText(label1Txt: "4 점", label2Txt: "만족스럽도다")
-            case 4.5: self.setLabelText(label1Txt: "4.5 점", label2Txt: "존맛탱")
+            case 3.0: self.setLabelText(label1Txt: "3 점", label2Txt: "이정도면 먹을만한데?") //무난무난
+            case 3.5: self.setLabelText(label1Txt: "3.5 점", label2Txt: "집밥만큼은 아니지만...") //이정도면 뭐 꽤 맛있군.
+            case 4.0: self.setLabelText(label1Txt: "4 점", label2Txt: "(배를 찰지게 두드리며) 만족스럽도다") //만족스럽도다
+            case 4.5: self.setLabelText(label1Txt: "4.5 점", label2Txt: "아 행님 기숙사밥 오지구요") //존맛탱
             case 5.0: self.setLabelText(label1Txt: "5 점", label2Txt: "주방장이 누구인가? 그자에게 큰 상을 내리고 싶도다.")
-            default: self.label2.text = "별점을 매겨주세요!"
+            default: self.label2.text = "별점을 매겨주세요"
             }
         }
     }
