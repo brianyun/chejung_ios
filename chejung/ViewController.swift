@@ -188,7 +188,7 @@ class ViewController: UIViewController {
         
         
         //아침, 점심, 저녁 선택했을 때 보여지도록 라벨 만듦. 투명도 조정함으로서 선택된 라벨만 보이도록 함.
-        self.morningLabel = self.appDelegate.ub.buildLabel(target: self.morningLabel, text: "아침", color: "#FFFFFF", textAlignment: .center, x: Ux(11), y: UIApplication.shared.statusBarFrame.height+Uy(275), width: Ux(68), height: Uy(66))
+        self.morningLabel = self.appDelegate.ub.buildLabel(target: self.morningLabel, text: "아침", color: "#000000", textAlignment: .center, x: Ux(11), y: UIApplication.shared.statusBarFrame.height+Uy(275), width: Ux(68), height: Uy(66))
         adjustFontLabel(label: self.morningLabel, style: "NanumBarunpen")
         
         self.lunchLabel = self.appDelegate.ub.buildLabel(target: self.lunchLabel, text: "점심", color: "#FFFFFF", textAlignment: .center, x: Ux(11), y: UIApplication.shared.statusBarFrame.height+Uy(349), width: Ux(68), height: Uy(66))
@@ -228,16 +228,16 @@ class ViewController: UIViewController {
         
         
         //지금까지 읽으면서 알겠지만, (개체 좌표/화면 전체크기) 비율을 유지함으로서 디바이스에 관계없이 앱이 구동되도록 하였음. 그 함수가 Ux(), Uy().
-        self.menu1 = self.appDelegate.ub.buildLabel(target: self.menu1, text: "menu1", color: "#FFFFFF", textAlignment: .center, x: Ux(142), y: UIApplication.shared.statusBarFrame.height+Uy(92), width: Ux(178), height: Uy(36))
+        self.menu1 = self.appDelegate.ub.buildLabel(target: self.menu1, text: "로", color: "#FFFFFF", textAlignment: .center, x: Ux(142), y: UIApplication.shared.statusBarFrame.height+Uy(92), width: Ux(178), height: Uy(36))
         adjustFontLabel(label: self.menu1, style: "NanumBarunpen")
         
-        self.menu2 = self.appDelegate.ub.buildLabel(target: self.menu2, text: "menu2", color: "#FFFFFF", textAlignment: .center, x: Ux(142), y: UIApplication.shared.statusBarFrame.height+Uy(141), width: Ux(178), height: Uy(36))
+        self.menu2 = self.appDelegate.ub.buildLabel(target: self.menu2, text: "딩", color: "#FFFFFF", textAlignment: .center, x: Ux(142), y: UIApplication.shared.statusBarFrame.height+Uy(141), width: Ux(178), height: Uy(36))
         adjustFontLabel(label: self.menu2, style: "NanumBarunpen")
         
-        self.menu3 = self.appDelegate.ub.buildLabel(target: self.menu3, text: "menu3", color: "#FFFFFF", textAlignment: .center, x: Ux(142), y: UIApplication.shared.statusBarFrame.height+Uy(189), width: Ux(178), height: Uy(36))
+        self.menu3 = self.appDelegate.ub.buildLabel(target: self.menu3, text: "중", color: "#FFFFFF", textAlignment: .center, x: Ux(142), y: UIApplication.shared.statusBarFrame.height+Uy(189), width: Ux(178), height: Uy(36))
         adjustFontLabel(label: self.menu3, style: "NanumBarunpen")
         
-        self.menu4 = self.appDelegate.ub.buildLabel(target: self.menu4, text: "menu4", color: "#FFFFFF", textAlignment: .center, x: Ux(142), y: UIApplication.shared.statusBarFrame.height+Uy(237), width: Ux(178), height: Uy(36))
+        self.menu4 = self.appDelegate.ub.buildLabel(target: self.menu4, text: "!", color: "#FFFFFF", textAlignment: .center, x: Ux(142), y: UIApplication.shared.statusBarFrame.height+Uy(237), width: Ux(178), height: Uy(36))
         adjustFontLabel(label: self.menu4, style: "NanumBarunpen")
         
         
@@ -245,11 +245,11 @@ class ViewController: UIViewController {
         adjustFontLabel(label: self.specialLabel, style: "NanumBarunpen")
         
         
-        self.menuSpecial = self.appDelegate.ub.buildLabel(target: self.menuSpecial, text: "menuSpecial", color: "#FFFFFF", textAlignment: .center, x: Ux(142), y: UIApplication.shared.statusBarFrame.height+Uy(364), width: Ux(178), height: Uy(36))
+        self.menuSpecial = self.appDelegate.ub.buildLabel(target: self.menuSpecial, text: "", color: "#FFFFFF", textAlignment: .center, x: Ux(142), y: UIApplication.shared.statusBarFrame.height+Uy(364), width: Ux(178), height: Uy(36))
         adjustFontLabel(label: self.menuSpecial, style: "NanumBarunpen")
         
         
-        self.specialRating = self.appDelegate.ub.buildLabel(target: self.specialRating, text: "rating", color: "#FFFFFF", textAlignment: .center, x: Ux(142), y: UIApplication.shared.statusBarFrame.height+Uy(400), width: Ux(178), height: Uy(26))
+        self.specialRating = self.appDelegate.ub.buildLabel(target: self.specialRating, text: "", color: "#FFFFFF", textAlignment: .center, x: Ux(142), y: UIApplication.shared.statusBarFrame.height+Uy(400), width: Ux(178), height: Uy(26))
         adjustFontLabel(label: self.specialRating, style: "NanumBarunpen")
         
         
@@ -342,7 +342,33 @@ class ViewController: UIViewController {
         self.ratingLabel.addGestureRecognizer(tapRating)
     }
     
+    func blackLabel() {
+        self.timeLabel.textColor! = self.appDelegate.ub.hexToUIColor("000000")
+        self.menu1.textColor! = self.appDelegate.ub.hexToUIColor("000000")
+        self.menu2.textColor! = self.appDelegate.ub.hexToUIColor("000000")
+        self.menu3.textColor! = self.appDelegate.ub.hexToUIColor("000000")
+        self.menu4.textColor! = self.appDelegate.ub.hexToUIColor("000000")
+        
+        self.menuSpecial.textColor! = self.appDelegate.ub.hexToUIColor("000000")
+        self.specialLabel.textColor! = self.appDelegate.ub.hexToUIColor("000000")
+        self.specialRating.textColor! = self.appDelegate.ub.hexToUIColor("000000")
+        self.backBtn.setImage(UIImage(named: "backB"), for: UIControlState.normal)
+        self.nextBtn.setImage(UIImage(named: "nextB"), for: UIControlState.normal)
+    }
     
+    func whiteLabel() {
+        self.timeLabel.textColor! = self.appDelegate.ub.hexToUIColor("FFFFFF")
+        self.menu1.textColor! = self.appDelegate.ub.hexToUIColor("FFFFFF")
+        self.menu2.textColor! = self.appDelegate.ub.hexToUIColor("FFFFFF")
+        self.menu3.textColor! = self.appDelegate.ub.hexToUIColor("FFFFFF")
+        self.menu4.textColor! = self.appDelegate.ub.hexToUIColor("FFFFFF")
+        
+        self.menuSpecial.textColor! = self.appDelegate.ub.hexToUIColor("FFFFFF")
+        self.specialLabel.textColor! = self.appDelegate.ub.hexToUIColor("FFFFFF")
+        self.specialRating.textColor! = self.appDelegate.ub.hexToUIColor("FFFFFF")
+        self.backBtn.setImage(UIImage(named: "back"), for: UIControlState.normal)
+        self.nextBtn.setImage(UIImage(named: "next"), for: UIControlState.normal)
+    }
     
     
     
@@ -351,6 +377,7 @@ class ViewController: UIViewController {
         self.morningLabel.alpha = 1
         self.lunchLabel.alpha = 1
         self.dinnerLabel.alpha = 1
+        self.blackLabel()
         
         print("DEBUG: func touchMorningBtn")
         self.meal = 1
@@ -372,6 +399,7 @@ class ViewController: UIViewController {
         self.morningLabel.alpha = 1
         self.lunchLabel.alpha = 1
         self.dinnerLabel.alpha = 1
+        self.whiteLabel()
         
         print("DEBUG: func touchLunchBtn")
         self.meal = 2
@@ -390,6 +418,7 @@ class ViewController: UIViewController {
         self.morningLabel.alpha = 1
         self.lunchLabel.alpha = 1
         self.dinnerLabel.alpha = 1
+        self.whiteLabel()
         
         print("DEBUG: func touchDinnerBtn")
         self.meal = 3
@@ -418,6 +447,7 @@ class ViewController: UIViewController {
         self.morningLabel.alpha = 0
         self.lunchLabel.alpha = 1
         self.dinnerLabel.alpha = 0
+        self.whiteLabel()
         
         self.timeString = labelArr.nextMonth+"월 "+labelArr.nextDay+"일 "+dateAndTime.weekDayToString(weekDayInt: labelArr.nextWeekDay)
         self.timeLabel.text = self.timeString
@@ -439,6 +469,7 @@ class ViewController: UIViewController {
         self.morningLabel.alpha = 0
         self.lunchLabel.alpha = 1
         self.dinnerLabel.alpha = 0
+        self.whiteLabel()
         
         self.timeString = labelArr.prevMonth+"월 "+labelArr.prevDay+"일 "+dateAndTime.weekDayToString(weekDayInt: labelArr.prevWeekDay)
         self.timeLabel.text = self.timeString
@@ -469,12 +500,15 @@ class ViewController: UIViewController {
         case 1:
             self.lunchLabel.alpha = 0
             self.dinnerLabel.alpha = 0
+            self.blackLabel()
         case 2:
             self.morningLabel.alpha = 0
             self.dinnerLabel.alpha = 0
+            self.whiteLabel()
         case 3:
             self.morningLabel.alpha = 0
             self.lunchLabel.alpha = 0
+            self.whiteLabel()
         default:
             print("DEBUG: switch default func swpDown()")
         }
