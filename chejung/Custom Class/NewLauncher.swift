@@ -494,7 +494,9 @@ class NewLauncher: NSObject, UITextFieldDelegate {
             case 2.0: self.setLabelText(label1Txt: "2 점", label2Txt: "언냐들 나만 맛없어?")
             case 3.0: self.setLabelText(label1Txt: "3 점", label2Txt: "무난무난")
             case 4.0: self.setLabelText(label1Txt: "4 점", label2Txt: "집밥만큼은 아니지만 만족")
-            case 5.0: self.setLabelText(label1Txt: "5 점", label2Txt: "주방장이 누구인가? 그자에게 큰 상을 내리고 싶도다.")
+            case 5.0:
+                self.setLabelText(label1Txt: "5 점", label2Txt: "주방장이 누구인가? 그자에게 큰 상을 내리고 싶도다.")
+                adjustFontLabel(label: self.label2, style: "NanumBarunpen")
             
             default: self.setLabelText(label1Txt: "1 점", label2Txt: "죽창을 들라..!")
             }
@@ -534,6 +536,13 @@ class NewLauncher: NSObject, UITextFieldDelegate {
         return false
     }
     
+    func adjustFontLabel(label: UILabel, style: String) {
+        
+        label.font = UIFont(name: style, size: 100)
+        label.numberOfLines = 0
+        label.minimumScaleFactor = 0.1
+        label.adjustsFontSizeToFitWidth = true
+    }
     
 }
 
