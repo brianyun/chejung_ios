@@ -13,10 +13,11 @@ import Crashlytics
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    //UIBuilder 쓰기 위한 선언.
     let ub: UIBuilder = UIBuilder()
     var window: UIWindow?
 
-    
+    //공유를 위한 변수 선언.
     var dateShared : String = String()
     var mealShared : Int = Int()
     
@@ -24,7 +25,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         Thread.sleep(forTimeInterval: 0.3) //LaunchScreen 보여주기 위해 인위적으로 0.3초 멈춤.
+        
+        
         Fabric.with([Crashlytics.self])
+        
+        
+        guard let gai = GAI.sharedInstance() else {
+            assert(false, "Google Analytics not configured correctly")
+        }
+        gai.tracker(withTrackingId: "UA-110222885-1")
+        // Optional: automatically report uncaught exceptions.
+        gai.trackUncaughtExceptions = true
+        
+        // Optional: set Logger to VERBOSE for debug information.
+        // Remove before app release.
+        // gai.logger.logLevel = .verbose;
+        
         return true
     }
 

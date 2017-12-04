@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57DC6A47A156DD521161F12B /* Pods_chejung.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78B34C2C87659EE27E76A3A4 /* Pods_chejung.framework */; };
+		E75EB76F3129905E4F0C31E8 /* Pods_chejungTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B9AB8C10DA5330707278CA /* Pods_chejungTests.framework */; };
 		FF00FB391F65A36300618B60 /* NanumBrush.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF00FB381F65A36300618B60 /* NanumBrush.otf */; };
 		FF0C6B911F53B63A00C331CE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF0C6B8F1F53B63A00C331CE /* Fabric.framework */; };
 		FF0C6B921F53B63A00C331CE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF0C6B901F53B63A00C331CE /* Crashlytics.framework */; };
@@ -19,7 +21,6 @@
 		FFA65DAC1F4B10980024CA65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DAB1F4B10980024CA65 /* Assets.xcassets */; };
 		FFA65DAF1F4B10980024CA65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DAD1F4B10980024CA65 /* LaunchScreen.storyboard */; };
 		FFA65DBA1F4B10980024CA65 /* chejungTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA65DB91F4B10980024CA65 /* chejungTests.swift */; };
-		FFA65DE51F4B10AC0024CA65 /* NanumBarunpenB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DD61F4B10AC0024CA65 /* NanumBarunpenB.ttf */; };
 		FFA65DE61F4B10AC0024CA65 /* NanumBarunpenR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFA65DD71F4B10AC0024CA65 /* NanumBarunpenR.ttf */; };
 		FFA65DED1F4B10F80024CA65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA65DEC1F4B10F80024CA65 /* ViewController.swift */; };
 /* End PBXBuildFile section */
@@ -35,6 +36,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		58B9AB8C10DA5330707278CA /* Pods_chejungTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chejungTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78B34C2C87659EE27E76A3A4 /* Pods_chejung.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chejung.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		812158F53C9A4B4F6C19646F /* Pods-chejung.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chejung.release.xcconfig"; path = "Pods/Target Support Files/Pods-chejung/Pods-chejung.release.xcconfig"; sourceTree = "<group>"; };
+		968C25E95E9E8D878AE6768F /* Pods-chejung.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chejung.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chejung/Pods-chejung.debug.xcconfig"; sourceTree = "<group>"; };
+		B38565A687D09D20DF40F245 /* Pods-chejungTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chejungTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-chejungTests/Pods-chejungTests.release.xcconfig"; sourceTree = "<group>"; };
+		DFF9F667AE6C751EBF6069F4 /* Pods-chejungTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chejungTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chejungTests/Pods-chejungTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FF00FB381F65A36300618B60 /* NanumBrush.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBrush.otf; sourceTree = "<group>"; };
 		FF0C6B8F1F53B63A00C331CE /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		FF0C6B901F53B63A00C331CE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -51,9 +58,9 @@
 		FFA65DB51F4B10980024CA65 /* chejungTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chejungTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFA65DB91F4B10980024CA65 /* chejungTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chejungTests.swift; sourceTree = "<group>"; };
 		FFA65DBB1F4B10980024CA65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FFA65DD61F4B10AC0024CA65 /* NanumBarunpenB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumBarunpenB.ttf; path = ralala_first/NanumBarunpenB.ttf; sourceTree = "<group>"; };
 		FFA65DD71F4B10AC0024CA65 /* NanumBarunpenR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumBarunpenR.ttf; path = ralala_first/NanumBarunpenR.ttf; sourceTree = "<group>"; };
 		FFA65DEC1F4B10F80024CA65 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FFB0E48B1FCB21090021AE51 /* chejung-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "chejung-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +70,7 @@
 			files = (
 				FF0C6B921F53B63A00C331CE /* Crashlytics.framework in Frameworks */,
 				FF0C6B911F53B63A00C331CE /* Fabric.framework in Frameworks */,
+				57DC6A47A156DD521161F12B /* Pods_chejung.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +78,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E75EB76F3129905E4F0C31E8 /* Pods_chejungTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63FD4550CAF68EC5C347B558 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78B34C2C87659EE27E76A3A4 /* Pods_chejung.framework */,
+				58B9AB8C10DA5330707278CA /* Pods_chejungTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		675CB6A90882D558AE4EE651 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				968C25E95E9E8D878AE6768F /* Pods-chejung.debug.xcconfig */,
+				812158F53C9A4B4F6C19646F /* Pods-chejung.release.xcconfig */,
+				DFF9F667AE6C751EBF6069F4 /* Pods-chejungTests.debug.xcconfig */,
+				B38565A687D09D20DF40F245 /* Pods-chejungTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FFA65D981F4B10980024CA65 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +113,8 @@
 				FFA65DA21F4B10980024CA65 /* Products */,
 				FF0C6B8F1F53B63A00C331CE /* Fabric.framework */,
 				FF0C6B901F53B63A00C331CE /* Crashlytics.framework */,
+				675CB6A90882D558AE4EE651 /* Pods */,
+				63FD4550CAF68EC5C347B558 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +139,7 @@
 				FFA65DAD1F4B10980024CA65 /* LaunchScreen.storyboard */,
 				FFA65DEC1F4B10F80024CA65 /* ViewController.swift */,
 				FFA65DB01F4B10980024CA65 /* Info.plist */,
+				FFB0E48B1FCB21090021AE51 /* chejung-Bridging-Header.h */,
 			);
 			path = chejung;
 			sourceTree = "<group>";
@@ -124,7 +156,6 @@
 		FFA65DEB1F4B10BF0024CA65 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				FFA65DD61F4B10AC0024CA65 /* NanumBarunpenB.ttf */,
 				FFA65DD71F4B10AC0024CA65 /* NanumBarunpenR.ttf */,
 				FF00FB381F65A36300618B60 /* NanumBrush.otf */,
 			);
@@ -156,10 +187,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFA65DBE1F4B10980024CA65 /* Build configuration list for PBXNativeTarget "chejung" */;
 			buildPhases = (
+				DD68E0BB9B06B8D43F41293C /* [CP] Check Pods Manifest.lock */,
 				FFA65D9D1F4B10980024CA65 /* Sources */,
 				FFA65D9E1F4B10980024CA65 /* Frameworks */,
 				FFA65D9F1F4B10980024CA65 /* Resources */,
 				FF0C6B8E1F53B61C00C331CE /* ShellScript */,
+				CDF70F673A77E76C24D46DFF /* [CP] Embed Pods Frameworks */,
+				4A8AE42BCEA5B9CD03B466CC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -174,9 +208,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFA65DC11F4B10980024CA65 /* Build configuration list for PBXNativeTarget "chejungTests" */;
 			buildPhases = (
+				892EA88FD96CA14AFA9A2C10 /* [CP] Check Pods Manifest.lock */,
 				FFA65DB11F4B10980024CA65 /* Sources */,
 				FFA65DB21F4B10980024CA65 /* Frameworks */,
 				FFA65DB31F4B10980024CA65 /* Resources */,
+				35A922833E4E51283849768F /* [CP] Embed Pods Frameworks */,
+				944C0930F23C80F2AAC8935D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -201,6 +238,7 @@
 					FFA65DA01F4B10980024CA65 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = A26J2FN32L;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					FFA65DB41F4B10980024CA65 = {
@@ -239,7 +277,6 @@
 				FFA65DE61F4B10AC0024CA65 /* NanumBarunpenR.ttf in Resources */,
 				FFA65DAF1F4B10980024CA65 /* LaunchScreen.storyboard in Resources */,
 				FFA65DAC1F4B10980024CA65 /* Assets.xcassets in Resources */,
-				FFA65DE51F4B10AC0024CA65 /* NanumBarunpenB.ttf in Resources */,
 				FFA65DAA1F4B10980024CA65 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +291,96 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		35A922833E4E51283849768F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-chejungTests/Pods-chejungTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A8AE42BCEA5B9CD03B466CC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-chejung/Pods-chejung-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		892EA88FD96CA14AFA9A2C10 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		944C0930F23C80F2AAC8935D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-chejungTests/Pods-chejungTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDF70F673A77E76C24D46DFF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-chejung/Pods-chejung-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD68E0BB9B06B8D43F41293C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		FF0C6B8E1F53B61C00C331CE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -418,40 +545,50 @@
 		};
 		FFA65DBF1F4B10980024CA65 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 968C25E95E9E8D878AE6768F /* Pods-chejung.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = A26J2FN32L;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = chejung/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chejung;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "chejung/chejung-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		FFA65DC01F4B10980024CA65 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 812158F53C9A4B4F6C19646F /* Pods-chejung.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = A26J2FN32L;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = chejung/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chejung;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "chejung/chejung-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		FFA65DC21F4B10980024CA65 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFF9F667AE6C751EBF6069F4 /* Pods-chejungTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -467,6 +604,7 @@
 		};
 		FFA65DC31F4B10980024CA65 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B38565A687D09D20DF40F245 /* Pods-chejungTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

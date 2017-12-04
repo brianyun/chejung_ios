@@ -8,25 +8,33 @@
 
 import UIKit
 
+//NewLauncher는 스르륵 메뉴 ('오늘 밥은 몇 점?' 클릭했을 때 올라오는 메뉴) 를 코딩하는 클래스임.
 class NewLauncher: NSObject, UITextFieldDelegate {
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    //passedDate, passedMeal로 변수 공유 관리.
     var passedDate = String()
     var passedMeal = String()
     
     
     
-    
+    //showSlide()는 스르륵 메뉴 올라오게끔 해주는 함수. ViewController.swift에서 호출되는 함수이고, 메인 함수이다.
     func showSlide() {
         
+        //개발자 본인은 setUI(), addSubviews(), addTargets() 이렇게 세 가지로 분리해서 UI 코드를 짠다. 이건 개인적인 성향.
         self.setUI()
         self.addSubviews()
         self.addTargets()
         
+        //올라오는 애니메이션 코딩. (1) UIView가 올라와야 하며 (2) 배경이 어두워져야 한다.
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             
+            //blackView가 뒤 배경.
             self.blackView.alpha = 1
+            
+            //slideInObj가 스르륵 올라오는 UIView임.
+            //Vy(), Vx()는 비율을 유지해주는 함수. 맨 아래에 보면 자세한 함수 있음.
             self.slideInObj.frame = CGRect(x: 0, y: self.Vy(267), width: self.Vx(375), height: self.Vy(400))
         }, completion: nil)
     }
@@ -38,19 +46,18 @@ class NewLauncher: NSObject, UITextFieldDelegate {
     
     
     
-    var label1 = UILabel()
-    var ratingView = CosmosView()
-    var label2 = UILabel()
-    var label3 = UILabel()
+    var label1 = UILabel() //'0 점'
+    var ratingView = CosmosView() //CosmosView가 별점 뷰임. 이건 GitHub에서 따로 클래스 받아왔음.
+    var label2 = UILabel() // '별점을 매겨주세요.'
+    var label3 = UILabel() // '의견 하나하나를 다 듣고있어요'
     
     var lineView = UIView() //선을 UIView로 일단 긋자.
-    //var commentView = UIImageView()
-    var commentView = UIView() //지금은 UIView지만 디자이너한테 이미지 파일 받고 나면 UIImageView로 바꿀 것.
-    var commentTextView = UITextField()
+    var commentView = UIView() //코멘트창의 배경이 되는 UIView. 그냥 흰색이다.
+    var commentTextView = UITextField() //코멘트창 입력할 수 있는 TextField.
     var returnBtn = UIButton()
     
-    var returnLabel = UILabel()
-    var returnImageView = UIImageView()
+    var returnLabel = UILabel() //'보내기'버튼 글자.
+    var returnImageView = UIImageView() //'보내기'버튼의 배경이 되는 이미지.
     
     
     
@@ -73,22 +80,22 @@ class NewLauncher: NSObject, UITextFieldDelegate {
         
         
         self.label1 = self.appDelegate.ub.buildLabel(target: self.label1, text: "0 점", color: "000000", textAlignment: .center, x: Vx(0), y: Vy(0), width: Vx(375), height: Vy(40))
-        self.label1.font = UIFont(name: "NanumBarunpen-Bold", size: Vy(25.0))
+        //폰트 크기 설정도 Vy() 함수 이용해서 비율 맞췄음. 이 부분은 헷갈릴 여지가 있는데,ViewController.swift에서는 폰트 크기 조정을 다른 방식으로 했음. 이 방법이 더 깔끔하다고 생각됨. 근데 결과물만 깔끔하면 상관 없으니까 안드로이드 버전에서는 취향에 맞게 폰트 설정할 것.
+        //디바이스가 바뀌면 글자 크기도 (당연히) 스크린에 맞춰서 커져야 함.
+        self.label1.font = UIFont(name: "NanumBarunpen", size: Vy(25.0))
         self.label1.textColor = self.appDelegate.ub.hexToUIColor("#C0392B")
-        //확인하려고 만든 background color. 나중에 다 삭제해야됨.
-        //self.label1.backgroundColor = self.appDelegate.ub.hexToUIColor("#F8C6CF")
         
         
         
         self.label2 = self.appDelegate.ub.buildLabel(target: self.label2, text: "별점을 매겨주세요", color: "000000", textAlignment: .center, x: Vx(0), y: Vy(40), width: Vx(375), height: Vy(30))
         self.label2.font = UIFont(name: "NanumBarunpen", size: Vy(17.0))
         self.label2.textColor = self.appDelegate.ub.hexToUIColor("#C0392B")
-        //확인하려고 만든 background color. 나중에 다 삭제해야됨.
-        //self.label2.backgroundColor = self.appDelegate.ub.hexToUIColor("#F9BF3B")
         
         
         
-        self.ratingView = self.appDelegate.ub.buildCosmosView(target: self.ratingView, fillMode: 1, starSize: Double(Vy(40.0)), filledColor: "#C0392B", emptyColor: "#FFFFFF", filledBorderColor: "#C0392B", emptyBorderColor: "#C0392B")
+        //ratingView는 CosmosView를 이용해 생성한다. 기본값은 별점 0개이다.
+        //CosmosView는 0.5점 단위로 설정할 수 있으며, 한번이라도 드래그한 적 있으면 그때는 최솟값이 0.5점임 (0점으로 복구 불가) 이해하기 어려울 수 있는데 직접 써보면 무슨얘긴지 알 것.
+        self.ratingView = self.appDelegate.ub.buildCosmosView(target: self.ratingView, fillMode: 0, starSize: Double(Vy(40.0)), filledColor: "#C0392B", emptyColor: "#FFFFFF", filledBorderColor: "#C0392B", emptyBorderColor: "#C0392B")
         let leftMargin = (self.slideInObj.frame.width - self.ratingView.intrinsicContentSize.width)/2
         self.ratingView.frame = CGRect(x: leftMargin, y: Vy(75), width: self.ratingView.intrinsicContentSize.width, height: self.ratingView.intrinsicContentSize.height)
         
@@ -102,12 +109,10 @@ class NewLauncher: NSObject, UITextFieldDelegate {
         self.label3 = self.appDelegate.ub.buildLabel(target: self.label3, text: "의견 하나하나를 다 듣고있어요.", color: "000000", textAlignment: .center, x: Vx(0), y: Vy(125), width: Vx(375), height: Vy(40))
         self.label3.font = UIFont(name: "NanumBarunpen", size: Vy(20.0))
         self.label3.textColor = self.appDelegate.ub.hexToUIColor("#C0392B")
-        //확인하려고 만든 background color. 나중에 다 삭제해야됨.
-        //self.label3.backgroundColor = self.appDelegate.ub.hexToUIColor("#F8C6CF")
         
         
         
-        //commentView는 진짜 배경으로서의 의미만 있다. 나중에 배경 이미지 넣어야지.
+        //commentView는 진짜 배경으로서의 의미만 있다. 나중에 배경 이미지 넣어야지 (이러고 안했음).
         self.commentView.backgroundColor = UIColor.white
         self.commentView.frame = CGRect(x: Vx(10), y: Vy(170), width: Vx(355), height: Vy(149))
         
@@ -121,12 +126,13 @@ class NewLauncher: NSObject, UITextFieldDelegate {
         
         
         self.returnBtn = self.appDelegate.ub.buildButton(target: self.returnBtn, title: "보내기", titleColor: "#FFFFFF", imageName: "returnBtn_temp", backgroundColor: "", x: Vx(20), y: Vy(329), width: Vx(335), height: Vy(60))
-        self.returnBtn.titleLabel?.font = UIFont(name: "NanumBarunpen-Bold", size: Vy(20.0))
+        self.returnBtn.titleLabel?.font = UIFont(name: "NanumBarunpen", size: Vy(20.0))
+        //버튼에 이미지를 넣으려면 이렇게 EdgeInsets를 넣어줘야 한다. 안드로이드는 다를 수도?
         self.returnBtn.titleEdgeInsets = UIEdgeInsets(top: 0, left: self.returnBtn.currentImage!.size.width * -1, bottom: 0, right: 0)
         
         
         self.returnLabel = self.appDelegate.ub.buildLabel(target: self.returnLabel, text: "보내기", color: "#FFFFFF", textAlignment: .center, x: Vx(20), y: Vy(329), width: Vx(335), height: Vy(60))
-        self.returnLabel.font = UIFont(name: "NanumBarunpen-Bold", size: Vy(20.0))
+        self.returnLabel.font = UIFont(name: "NanumBarunpen", size: Vy(20.0))
         self.returnLabel.isUserInteractionEnabled = true
         
         
@@ -136,7 +142,7 @@ class NewLauncher: NSObject, UITextFieldDelegate {
     }
     
     
-    
+    //addSubview() 함수들의 모음. 일단 window에 blackView, slideInObj를 넣고 slideInObj 안에 나머지 뷰들을 넣음.
     func addSubviews() {
         
         if let window = UIApplication.shared.keyWindow {
@@ -159,23 +165,29 @@ class NewLauncher: NSObject, UITextFieldDelegate {
     }
     
     
-    
+    //유저 터치/스와이프같은 입력에 반응하는 함수들의 모음.
     func addTargets() {
         
+        //스르륵 메뉴가 올라왔을 때, blackView를 터치하면 스르륵 내려감.
         blackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissSlide)))
+        //slideInObj를 아래로 스와이프해도 스르륵 내려감.
         let swpDown = UISwipeGestureRecognizer(target: self, action: #selector(dismissSlide))
         swpDown.direction = .down
         slideInObj.addGestureRecognizer(swpDown)
         
         
         self.ratingView.didFinishTouchingCosmos = didFinishTouchingCosmos(_:)
+        //키보드에서 '완료' 버튼 누르면 키보드가 사라지도록.
         self.commentTextView.addTarget(self, action: #selector(exitEdit), for: .editingDidEnd)
         
+        
+        //뷰들을 터치하면 dismissKeyboard (평점 입력도중 올라오는 키보드 없애기) 활성화.
         for vie in [self.label1, self.label2, self.label3, self.lineView] {
             vie.isUserInteractionEnabled = true
             vie.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         }
         
+        //'보내기'버튼 누를 경우에 작동되는 함수.
         let tapReturn = UILongPressGestureRecognizer(target: self, action: #selector(self.panReturnBtn))
         tapReturn.minimumPressDuration = 0
         self.returnLabel.addGestureRecognizer(tapReturn)
@@ -193,7 +205,6 @@ class NewLauncher: NSObject, UITextFieldDelegate {
             self.slideInObj.frame = CGRect(x: 0, y: self.Vy(667), width: self.Vx(375), height: self.Vy(400))
         })
     }
-    
     
     
     
@@ -258,9 +269,10 @@ class NewLauncher: NSObject, UITextFieldDelegate {
         if let txt = self.commentTextView.text {
             print("DEBUG: rating is \(self.inputRating) and comment is \(txt)")
         }
-        //한 사람이 한 메뉴에 대해 여러 번 포스트하면 어떡하지? 음음
+        //한 사람이 한 메뉴에 대해 여러 번 포스트하면 어떡하지? 음음 그냥 내버려두자.
         
         
+        //평점, 의견 둘 다 nil일 경우에는 입력 작동 안함.
         if self.inputRating != 0.0 || self.commentTextView.text != "" {
             
             if let window = UIApplication.shared.keyWindow {
@@ -281,7 +293,6 @@ class NewLauncher: NSObject, UITextFieldDelegate {
             
             self.showFinish()
             
-            //Activity Indicator 안보임. Here's where I leave it.
             
         } else {
             print("DEBUG: false alarm - touchReturnBtn with no data")
@@ -291,9 +302,11 @@ class NewLauncher: NSObject, UITextFieldDelegate {
     }
 
     
+    
+    //서버에 평점, 의견 POST 리퀘스트 보내는 코드. 엔드포인트는 없다 (/)
     func insertRating(_ date: String, _ meal: String, _ rating: Double, _ comment: String) {
         
-        
+        //이렇게 파라미터 지정해준 배열(?) 전체를 POST로 보냄.
         let json = ["date": date, "meal": meal,"rating": rating, "comment": comment] as [String : Any]
         
         do {
@@ -340,6 +353,7 @@ class NewLauncher: NSObject, UITextFieldDelegate {
     
     
     
+    //'보내기' 성공적으로 작동시에 보이는 화면 (tap to dismiss 문구 있는 화면) 코드.
     func showFinish() {
         
         self.setFinishUI()
@@ -362,7 +376,7 @@ class NewLauncher: NSObject, UITextFieldDelegate {
     
     
     
-    
+    //finishView를 따로 만들어 주었음.
     func setFinishUI() {
     
         if let window = UIApplication.shared.keyWindow {
@@ -413,6 +427,7 @@ class NewLauncher: NSObject, UITextFieldDelegate {
     }
     
     
+    //탭할 경우에 발동되는, finishView 사라지는 함수.
     func dismissFinish() {
         UIView.animate(withDuration: 0.5) {
             self.finishView.alpha = 0
@@ -438,6 +453,7 @@ class NewLauncher: NSObject, UITextFieldDelegate {
     
     
 
+    //의견 입력 시작하면 키보드 높이만큼 slideInObj가 똑같이 올라가야 한다. 생각해보면 당연한 요소. 이때 키보드 높이가 디바이스마다 다를까봐 키보드 높이를 알려주는 메소드가 있길래 찾아옴.
     var keyboardHeight = CGFloat() {
         didSet {
             UIView.animate(withDuration: 0.5, animations: {
@@ -468,38 +484,36 @@ class NewLauncher: NSObject, UITextFieldDelegate {
     
     
     
-    
+    //didSet 함수 이용해서, inputRating (CosmosView 드래그하면서 바뀌는 평점 값) 이 바뀔 때마다 그에 맞추어서 문구 (label2)가 바뀌도록 함.
     var inputRating : Double = 0.0 {
         didSet {
             
             switch inputRating {
             case 0.0: self.setLabelText(label1Txt: "0 점", label2Txt: "별점을 매겨주세요")
-            case 0.5: self.setLabelText(label1Txt: "0.5 점", label2Txt: "살기 위해 먹는다...")
-            case 1.0: self.setLabelText(label1Txt: "1 점", label2Txt: "음 이맛은... 노맛!")
-            case 1.5: self.setLabelText(label1Txt: "1.5 점", label2Txt: "오늘 맛없다고 소문낼꺼야")
-            case 2.0: self.setLabelText(label1Txt: "2 점", label2Txt: "언냐들 나만 맛없어?") //"맛없는건 기분탓인가?"
-            case 2.5: self.setLabelText(label1Txt: "2.5 점", label2Txt: "나는 아무 생각이 없다. 왜냐하면 아무 생각이 없기 때문이다.")
-            case 3.0: self.setLabelText(label1Txt: "3 점", label2Txt: "이정도면 먹을만한데?") //무난무난
-            case 3.5: self.setLabelText(label1Txt: "3.5 점", label2Txt: "집밥만큼은 아니지만...") //이정도면 뭐 꽤 맛있군.
-            case 4.0: self.setLabelText(label1Txt: "4 점", label2Txt: "(배를 찰지게 두드리며) 만족스럽도다") //만족스럽도다
-            case 4.5: self.setLabelText(label1Txt: "4.5 점", label2Txt: "아 행님 기숙사밥 오지구요") //존맛탱
+            case 1.0: self.setLabelText(label1Txt: "1 점", label2Txt: "죽창을 들라..!")
+            case 2.0: self.setLabelText(label1Txt: "2 점", label2Txt: "언냐들 나만 맛없어?")
+            case 3.0: self.setLabelText(label1Txt: "3 점", label2Txt: "무난무난")
+            case 4.0: self.setLabelText(label1Txt: "4 점", label2Txt: "집밥만큼은 아니지만 만족")
             case 5.0: self.setLabelText(label1Txt: "5 점", label2Txt: "주방장이 누구인가? 그자에게 큰 상을 내리고 싶도다.")
-            default: self.label2.text = "별점을 매겨주세요"
+            
+            default: self.setLabelText(label1Txt: "1 점", label2Txt: "죽창을 들라..!")
             }
         }
     }
     
+    //이건 바로 위에 있는 didSet 함수를 깔끔하게 만들기 위해서 선언한 간단한 함수.
     func setLabelText(label1Txt: String, label2Txt: String) {
         self.label1.text = label1Txt
         self.label2.text = label2Txt
     }
     
     
-    
+    //비율 설정을 위한 Vx(), Vy().
     func Vx(_ n: CGFloat) -> CGFloat { return n * (UIApplication.shared.keyWindow!.frame.width/375) }
     func Vy(_ n: CGFloat) -> CGFloat { return n * (UIApplication.shared.keyWindow!.frame.height/667) }
     
     
+    //CosmosView를 드래그/탭 하여 별점을 선택하면 이렇게 self.inputRating이 바뀐다.
     private func didFinishTouchingCosmos(_ rating: Double) {
         print("DEBUG: func didFinishTouchingCosmos")
         self.inputRating = rating

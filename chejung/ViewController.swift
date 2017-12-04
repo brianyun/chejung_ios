@@ -8,13 +8,14 @@
 
 import UIKit
 
+//ViewController는 메인 작업이 일어나는 클래스.
 class ViewController: UIViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     var weekDay: Int = 0
     var meal: Int = 0 //아침이면 1, 점심이면 2, 저녁이면 3
     var date: String = ""
-    var month: Int = 0
+    var month: Int = 0 //사소하지만, date는 String이고 month, day는 Int형 변수이다.
     var day: Int = 0
     
     
@@ -32,8 +33,16 @@ class ViewController: UIViewController {
     }
     
     
+    override func viewDidAppear(_ animated: Bool) {
+        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
+        tracker.set("kGAIScreenName", value: "ViewController")
+        
+        guard let builder = GAIDictionaryBuilder.createScreenView() else { return }
+        tracker.send(builder.build() as [NSObject : AnyObject])
+    }
     
     
+    //sendQuery는 qDate, qMeal에 맞추어 서버에 요청을 보내, 해당 식단을 리턴받는 함수임.
     func sendQuery(qDate: String, qMeal: Int) -> () {
         
         print("DEBUG: sendQuery is initiated.")
@@ -45,6 +54,7 @@ class ViewController: UIViewController {
         
         let doTask = URLSession.shared.dataTask(with: request2) {(data, response, error) -> Void in
             
+            //인터넷 연결이 없는 경우 이렇게 에러 처리를 해주어야 함. 안할 경우 그냥 앱이 crash함.
             if let err = error as? URLError, err.code  == URLError.Code.notConnectedToInternet
             {
                 print("DEBUG: No internet")
@@ -77,6 +87,7 @@ class ViewController: UIViewController {
     }
     
     
+    //getRating은 '0.0 / 5.0' 텍스트를 받는 함수임. 이건 나중에 업데이트를 의식한 미완성 코드임.
     func getRating(qDate: String, qMeal: Int) -> () {
         
         print("DEBUG: getRating is initiated.")
@@ -149,18 +160,23 @@ class ViewController: UIViewController {
         print("DEBUG: height: \(self.view.frame.height)")
         
         
+        //일단 현재 날짜/시간을 받아와서 self에 저장한다.
         dateAndTime.setNow()
         self.date = dateAndTime.date
         self.meal = dateAndTime.meal
         self.weekDay = dateAndTime.weekDay
+        //labelArr는 라벨 텍스트 설정에 필요한 값들을 한번에 모아둔 배열임. 그 내용은 DateAndTime 클래스 안에 있는 함수로 구성.
         let labelArr = dateAndTime.setMonthDayString(date: dateAndTime.date, meal: dateAndTime.meal, weekDay: dateAndTime.weekDay)
         
         
+        //backgroundView가 노랑/초록/빨강 배경화면임. Assets 안에 image 이름을 각각 1, 2, 3으로 저장해, String(self.meal)이 바로 이미지 이름이 되도록 했음.
+        //setUI() 안에서, 위에 상태표시바 높이만큼 시작점을 낮게 잡음. 이 설정은 일괄적으로 유지됨.
         self.backgroundView = self.appDelegate.ub.buildImageView(target: self.backgroundView, image: String(self.meal), contentMode: .scaleToFill, x: Ux(0), y: UIApplication.shared.statusBarFrame.height, width: Ux(375), height: Uy(504))
         self.backgroundView.isUserInteractionEnabled = true
         
         
-        
+        //앱 좌측 상단에 보이는 제중/법현/SK 글씨. 이미지 파일로 지정하면 좋았으련만 코드로 작성했다.
+        //폰트는 나눔붓, 글씨 크기는 디바이스 따라 바뀌도록 adjustFontLabel()이라는 함수 만들어서 지정.
         self.dorm1 = self.appDelegate.ub.buildLabel(target: self.dorm1, text: "제중", color: "#000000", textAlignment: .center, x: Ux(0), y: UIApplication.shared.statusBarFrame.height+Uy(10), width: Ux(86), height: Uy(45))
         adjustFontLabel(label: self.dorm1, style: "NanumBrushOTF")
         
@@ -171,18 +187,18 @@ class ViewController: UIViewController {
         adjustFontLabel(label: self.dorm3, style: "NanumBrushOTF")
         
         
-        
+        //아침, 점심, 저녁 선택했을 때 보여지도록 라벨 만듦. 투명도 조정함으로서 선택된 라벨만 보이도록 함.
         self.morningLabel = self.appDelegate.ub.buildLabel(target: self.morningLabel, text: "아침", color: "#FFFFFF", textAlignment: .center, x: Ux(11), y: UIApplication.shared.statusBarFrame.height+Uy(275), width: Ux(68), height: Uy(66))
-        adjustFontLabel(label: self.morningLabel, style: "NanumBarunpen-Bold")
+        adjustFontLabel(label: self.morningLabel, style: "NanumBarunpen")
         
         self.lunchLabel = self.appDelegate.ub.buildLabel(target: self.lunchLabel, text: "점심", color: "#FFFFFF", textAlignment: .center, x: Ux(11), y: UIApplication.shared.statusBarFrame.height+Uy(349), width: Ux(68), height: Uy(66))
-        adjustFontLabel(label: self.lunchLabel, style: "NanumBarunpen-Bold")
+        adjustFontLabel(label: self.lunchLabel, style: "NanumBarunpen")
         
         self.dinnerLabel = self.appDelegate.ub.buildLabel(target: self.dinnerLabel, text: "저녁", color: "#FFFFFF", textAlignment: .center, x: Ux(11), y: UIApplication.shared.statusBarFrame.height+Uy(424), width: Ux(68), height: Uy(66))
-        adjustFontLabel(label: self.dinnerLabel, style: "NanumBarunpen-Bold")
+        adjustFontLabel(label: self.dinnerLabel, style: "NanumBarunpen")
         
         
-        
+        //아침, 점심, 저녁 버튼.
         self.morningButton = self.appDelegate.ub.buildButton(target: self.morningButton, title: "", titleColor: "#FFFFFF", imageName: "", backgroundColor: "", x: Ux(0), y: UIApplication.shared.statusBarFrame.height+Uy(259), width: Ux(86), height: Uy(74))
         
         self.lunchButton = self.appDelegate.ub.buildButton(target: self.lunchButton, title: "", titleColor: "#FFFFFF", imageName: "", backgroundColor: "", x: Ux(0), y: UIApplication.shared.statusBarFrame.height+Uy(356), width: Ux(86), height: Uy(74))
@@ -190,18 +206,19 @@ class ViewController: UIViewController {
         self.dinnerBtn = self.appDelegate.ub.buildButton(target: self.dinnerBtn, title: "", titleColor: "#FFFFFF", imageName: "", backgroundColor: "", x: Ux(0), y: UIApplication.shared.statusBarFrame.height+Uy(429), width: Ux(86), height: Uy(74))
         
         
-        
+        //매뉴 배경. 투명한 UIView인데, user interaction (스와이프, 탭 등등)을 인식하기 위해 만들었음.
         self.menuView.backgroundColor = UIColor.clear
         self.menuView.frame = CGRect(x: Ux(105), y: UIApplication.shared.statusBarFrame.height, width: Ux(270), height: Uy(504))
 
         
         
-        
+        //메뉴 상단에 있는 '10월 17일 (수)' 라벨. 역시 글씨 크기 조정한다.
         self.timeString = labelArr.month+"월 "+labelArr.day+"일 "+labelArr.weekDay
         self.timeLabel = self.appDelegate.ub.buildLabel(target: self.timeLabel, text: self.timeString, color: "#FFFFFF", textAlignment: .center, x: Ux(142), y: UIApplication.shared.statusBarFrame.height+Uy(28), width: Ux(178), height: Uy(29))
-        adjustFontLabel(label: self.timeLabel, style: "NanumBarunpen-Bold")
+        adjustFontLabel(label: self.timeLabel, style: "NanumBarunpen")
         
         
+        //timeLabel 양쪽에 있는 <, >. 눌러도 아무 일도 일어나지 않는다.
         self.nextBtn = self.appDelegate.ub.buildButton(target: self.nextBtn, title: "", titleColor: "", imageName: "next", backgroundColor: "", x: Ux(335), y: UIApplication.shared.statusBarFrame.height+Uy(27), width: Ux(12), height: Uy(29))
         self.nextBtn.imageView?.contentMode = .scaleAspectFit
         
@@ -210,7 +227,7 @@ class ViewController: UIViewController {
         
         
         
-        
+        //지금까지 읽으면서 알겠지만, (개체 좌표/화면 전체크기) 비율을 유지함으로서 디바이스에 관계없이 앱이 구동되도록 하였음. 그 함수가 Ux(), Uy().
         self.menu1 = self.appDelegate.ub.buildLabel(target: self.menu1, text: "menu1", color: "#FFFFFF", textAlignment: .center, x: Ux(142), y: UIApplication.shared.statusBarFrame.height+Uy(92), width: Ux(178), height: Uy(36))
         adjustFontLabel(label: self.menu1, style: "NanumBarunpen")
         
@@ -237,11 +254,12 @@ class ViewController: UIViewController {
         
         
         
-        self.ratingLabel = self.appDelegate.ub.buildLabel(target: self.ratingLabel, text: "오늘 밥은 몇 점?", color: "#FFFFFF", textAlignment: .center, x: Ux(0), y: Uy(587), width: Ux(375), height: Uy(80))
-        self.ratingLabel.font = UIFont(name: "NanumBarunpen-Bold", size: min(Ux(25.0), Uy(25.0)))
+        self.ratingLabel = self.appDelegate.ub.buildLabel(target: self.ratingLabel, text: "오늘 밥은 몇 점?", color: "#000000", textAlignment: .center, x: Ux(0), y: Uy(587), width: Ux(375), height: Uy(80))
+        self.ratingLabel.font = UIFont(name: "NanumBarunpen", size: min(Ux(25.0), Uy(25.0)))
         self.ratingLabel.isUserInteractionEnabled = true
         
         
+        //'오늘 밥은 몇 점?' 버튼의 배경이 되는 이미지뷰. 클릭하면 색깔이 짙게 바뀐다.
         self.ratingImageView = self.appDelegate.ub.buildImageView(target: self.ratingImageView, image: "gray_bottom", contentMode: .scaleToFill, x: Ux(0), y: Uy(587), width: Ux(375), height: Uy(80))
         
     }
@@ -260,6 +278,7 @@ class ViewController: UIViewController {
         self.view.addSubview(lunchLabel)
         self.view.addSubview(dinnerLabel)
         
+        //선택한 라벨 이외의 것들은 투명하게.
         switch self.meal{
         case 1:
             self.lunchLabel.alpha = 0
@@ -281,7 +300,6 @@ class ViewController: UIViewController {
         self.view.addSubview(dinnerBtn)
         
         self.view.addSubview(timeLabel)
-        //클릭 가능토록 하기 위해 마지막에 추가함.
         self.view.addSubview(nextBtn)
         self.view.addSubview(backBtn)
         
@@ -292,6 +310,7 @@ class ViewController: UIViewController {
         self.view.addSubview(specialLabel)
         self.view.addSubview(menuSpecial)
         self.view.addSubview(specialRating)
+        //클릭 가능토록 하기 위해 마지막에 추가함.
         self.view.addSubview(menuView)
         
         self.view.addSubview(ratingImageView)
@@ -327,7 +346,7 @@ class ViewController: UIViewController {
     
     
     
-    
+    //아침 눌렀을 경우에 아침만 보여지도록. 간단한 함수이다.
     func touchMorningBtn() {
         self.morningLabel.alpha = 1
         self.lunchLabel.alpha = 1
@@ -339,8 +358,11 @@ class ViewController: UIViewController {
         self.lunchLabel.alpha = 0
         self.dinnerLabel.alpha = 0
         
+        //배경 이미지도 바꾸고
         self.backgroundView.image = UIImage(named: "1")
+        //메뉴를 불러와야지
         self.sendQuery(qDate: self.date, qMeal: self.meal)
+        //shareVariable()은 변수 공유를 위해 만듦.
         self.shareVariable()
     }
     
@@ -386,7 +408,7 @@ class ViewController: UIViewController {
     
     
     
-    
+    //다음날 메뉴
     func swpLeft() {
         //참고) swipe left라는 것은, 손가락이 왼쪽으로 간다는 의미이다. 즉 오른쪽에서 왼쪽으로 손가락을 끄는 것.
         print("DEBUG: func swpLeft")
@@ -407,6 +429,7 @@ class ViewController: UIViewController {
     }
     
     
+    //전날 메뉴
     func swpRight() {
     
         print("DEBUG: func swpRight")
@@ -427,6 +450,7 @@ class ViewController: UIViewController {
     }
     
     
+    //새로고침 함수. swpDown으로 이름을 짓긴 했는데 메뉴를 탭할 경우에 호출된다.
     func swpDown() {
         self.morningLabel.alpha = 1
         self.lunchLabel.alpha = 1
@@ -479,6 +503,7 @@ class ViewController: UIViewController {
     func Uy(_ n: CGFloat) -> CGFloat { return n*(self.view.frame.height/667) }
     
     
+    //글자크기를 디바이스에 맞추어 변화시키는 함수. NewLauncher()에서 쓰인 메커니즘과 다르다. 그냥 알아서 ㄱㄱ
     func adjustFontLabel(label: UILabel, style: String) {
         
         label.font = UIFont(name: style, size: 100)
@@ -496,6 +521,7 @@ class ViewController: UIViewController {
     
     let newLauncher = NewLauncher()
     
+    //'오늘 밥은 몇 점?' 버튼은 누르고 있을 경우에 색깔이 짙게 바뀌도록 만든 함수.
     func touchRatingBtn(gesture: UIPanGestureRecognizer) {
         
         let point = gesture.location(in: view)
