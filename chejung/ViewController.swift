@@ -46,10 +46,10 @@ class ViewController: UIViewController {
     func sendQuery(qDate: String, qMeal: Int) -> () {
         
         print("DEBUG: sendQuery is initiated.")
-        //let localURL = URL(string: "http://172.30.1.16:7777/menu/search?date="+qDate+"&meal="+String(qMeal))
-        let serverURL = URL(string: "http://13.124.139.15:7777/menu/search?date="+qDate+"&meal="+String(qMeal))
+        let localURL = URL(string: "http://172.30.1.28:7777/menu/search?date="+qDate+"&meal="+String(qMeal))
+        //let serverURL = URL(string: "http://13.124.139.15:7777/menu/search?date="+qDate+"&meal="+String(qMeal))
         
-        var request2 = URLRequest(url: serverURL!)
+        var request2 = URLRequest(url: localURL!)
         request2.httpMethod = "GET"
         
         let doTask = URLSession.shared.dataTask(with: request2) {(data, response, error) -> Void in
@@ -91,10 +91,10 @@ class ViewController: UIViewController {
     func getRating(qDate: String, qMeal: Int) -> () {
         
         print("DEBUG: getRating is initiated.")
-        //let localURL = URL(string: "http://172.31.0.245:7777/menu/rating?date="+qDate+"&meal="+String(qMeal))
-        let serverURL = URL(string: "http://13.124.139.15:7777/menu/rating?date="+qDate+"&meal="+String(qMeal))
+        let localURL = URL(string: "http://172.30.1.28:7777/menu/rating?date="+qDate+"&meal="+String(qMeal))
+        //let serverURL = URL(string: "http://13.124.139.15:7777/menu/rating?date="+qDate+"&meal="+String(qMeal))
         
-        var request3 = URLRequest(url: serverURL!)
+        var request3 = URLRequest(url: localURL!)
         request3.httpMethod = "GET"
         
         let doTask = URLSession.shared.dataTask(with: request3) {(data, response, error) -> Void in
